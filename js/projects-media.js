@@ -40,7 +40,7 @@ window.CRJ_PROJECT_MEDIA = {
               zh: "《蜃楼》混音 · 约 38 分钟",
               en: "Mirage mix · ~38 min",
             },
-            src: "assets/film/mirage/mix.wav",
+            src: "assets/film/mirage/mix.m4a",
             note: {
               zh: "全片混音音频 · 可拖动进度条试听",
               en: "Full mix · scrub to sample",
@@ -507,7 +507,7 @@ window.CRJ_PROJECT_MEDIA = {
           {
             kind: "audio",
             label: { zh: "Chaos · 音效 + 音乐", en: "Chaos · SFX + music" },
-            src: "assets/install/dmsp/sfx/chaos-music.wav",
+            src: "assets/install/dmsp/sfx/chaos-music.m4a",
             note: {
               zh: "混乱层 · 音效与音乐混合",
               en: "Chaos layer · sound effects with music",
@@ -521,7 +521,7 @@ window.CRJ_PROJECT_MEDIA = {
           {
             kind: "video",
             label: { zh: "MaxMSP 部分视频展示", en: "MaxMSP section · video demo" },
-            src: "assets/install/dmsp/screen-record.mov",
+            src: "assets/install/dmsp/screen-record.mp4",
           },
           {
             kind: "video",

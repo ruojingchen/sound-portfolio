@@ -1,27 +1,17 @@
-# OS / editor
 .DS_Store
 Thumbs.db
 *.swp
 .idea/
 .vscode/
-
-# Local / huge media (keep small posters & icons in repo)
-# Videos and long mixes live as local symlinks or on disk
-assets/**/*.mp4
-assets/**/*.mov
-assets/**/*.wav
-assets/**/*.aiff
-assets/**/*.aif
-assets/**/*.flac
-assets/**/*.m4a
-assets/game/**/*.zip
-assets/game/**/*.app/
-assets/install/**/*.zip
-
-# Python cache
 __pycache__/
 *.pyc
-
-# Local notes
 *.log
 .media-local/
+.env*
+.vercel
+
+# Keep oversized local masters out of git (web encodes go in as normal files)
+assets/**/*-master.*
+assets/**/*.prores.*
+logs/
+**/*.partial*
