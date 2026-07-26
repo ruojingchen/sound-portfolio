@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="陈若菁 — 声音设计者。影视、广告、空间音频、交互声景、现场综艺。 / Ruojing Chen — Sound Designer." />
+  <title>陈若菁 · Sound Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="field" aria-hidden="true"></canvas>
+
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__ring"></span>
+    <span class="cursor__dot"></span>
+    <span class="cursor__label">listen</span>
+  </div>
+
+  <div class="gate" id="gate">
+    <div class="gate__ambient" aria-hidden="true">
+      <svg class="gate__ambient-wave" viewBox="0 0 800 200" preserveAspectRatio="none">
+        <path d="M0 100 Q40 70 80 100 T160 100 T240 100 T320 100 T400 100 T480 100 T560 100 T640 100 T720 100 T800 100"
+              fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.22"/>
+        <path d="M0 100 Q40 130 80 100 T160 100 T240 100 T320 100 T400 100 T480 100 T560 100 T640 100 T720 100 T800 100"
+              fill="none" stroke="currentColor" stroke-width="1" opacity="0.12"/>
+      </svg>
+    </div>
+
+    <div class="gate__inner">
+      <div class="gate__card">
+        <aside class="gate__aside">
+          <div class="gate__photo">
+            <img src="assets/portrait.jpg" alt="陈若菁" width="320" height="420" />
+          </div>
+          <div class="gate__actions">
+            <div class="gate__eq" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span>
+            </div>
+            <button class="gate__enter" id="enterBtn" type="button">
+              <span data-i18n="gate.enter">进入聆听</span>
+              <span class="gate__enter-sub">
+                <span data-i18n="gate.enterSub1">欢迎走进</span>
+                <span data-i18n="gate.enterSub2">可被聆听的世界</span>
+              </span>
+            </button>
+            <div class="gate__actions-row">
+              <p class="gate__hint" data-i18n="gate.hint">建议佩戴耳机</p>
+              <div class="lang-switch gate__lang" role="group" aria-label="Language">
+                <button type="button" class="lang-switch__btn is-active" data-lang="zh" aria-pressed="true">中</button>
+                <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="gate__content">
+          <header class="gate__names">
+            <div class="gate__name-row">
+              <p class="gate__brand" data-i18n="gate.brand">陈若菁</p>
+              <span class="gate__name-dot" aria-hidden="true"></span>
+              <p class="gate__brand-en">RUOJING CHEN</p>
+            </div>
+            <p class="gate__role" data-i18n="gate.role">声音设计者 · Sound Designer</p>
+          </header>
+
+          <section class="gate__part">
+            <h3 class="gate__part-title" data-i18n="gate.eduTitle">教育经历</h3>
+            <ul class="gate__edu">
+              <li>
+                <div class="gate__edu-main">
+                  <span class="gate__edu-school" data-i18n="gate.edu1School">爱丁堡大学</span>
+                  <span class="gate__edu-sep">·</span>
+                  <span class="gate__edu-degree" data-i18n="gate.edu1Degree">声音设计专业硕士</span>
+                </div>
+                <span class="gate__edu-date" data-i18n="gate.edu1Date">2023.09 — 2024.11</span>
+              </li>
+              <li>
+                <div class="gate__edu-main">
+                  <span class="gate__edu-school" data-i18n="gate.edu2School">浙江传媒学院</span>
+                  <span class="gate__edu-sep">·</span>
+                  <span class="gate__edu-degree" data-i18n="gate.edu2Degree">录音艺术专业本科</span>
+                </div>
+                <span class="gate__edu-date" data-i18n="gate.edu2Date">2017.09 — 2021.06</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="gate__part">
+            <h3 class="gate__part-title" data-i18n="gate.skillsTitle">技能</h3>
+            <p class="gate__skills-text" data-i18n="gate.skills">
+              空间音频 / 全景声 · 影视与广告声音 · 交互声景 · 游戏音频 · 现场综艺 · AI 工作流
+            </p>
+            <div class="gate__toolkit">
+              <div class="gate__toolkit-group">
+                <span class="gate__toolkit-label" data-i18n="gate.toolkitAudio">音频</span>
+                <ul class="gate__tools">
+                  <li title="Logic Pro">
+                    <img src="assets/icons/logic.png" alt="Logic Pro" width="36" height="36" />
+                    <span>Logic</span>
+                  </li>
+                  <li title="Pro Tools">
+                    <img src="assets/icons/protools.png" alt="Pro Tools" width="36" height="36" />
+                    <span>Pro Tools</span>
+                  </li>
+                  <li title="REAPER">
+                    <img src="assets/icons/reaper.png" alt="REAPER" width="36" height="36" />
+                    <span>Reaper</span>
+                  </li>
+                  <li title="Wwise">
+                    <img src="assets/icons/wwise.svg" alt="Wwise" width="36" height="36" />
+                    <span>Wwise</span>
+                  </li>
+                  <li title="Max/MSP">
+                    <img src="assets/icons/maxmsp.svg" alt="Max/MSP" width="36" height="36" />
+                    <span>Max/MSP</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="gate__toolkit-group">
+                <span class="gate__toolkit-label" data-i18n="gate.toolkitGame">游戏 / 引擎</span>
+                <ul class="gate__tools">
+                  <li title="Unity">
+                    <img src="assets/icons/unity.svg" alt="Unity" width="36" height="36" />
+                    <span>Unity</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="gate__toolkit-group">
+                <span class="gate__toolkit-label" data-i18n="gate.toolkitAi">AI</span>
+                <ul class="gate__tools">
+                  <li title="Cursor">
+                    <img src="assets/icons/cursor.png" alt="Cursor" width="36" height="36" />
+                    <span>Cursor</span>
+                  </li>
+                  <li title="Claude">
+                    <img src="assets/icons/claude.png" alt="Claude" width="36" height="36" />
+                    <span>Claude</span>
+                  </li>
+                  <li title="Trae">
+                    <img src="assets/icons/trae.png" alt="Trae" width="36" height="36" />
+                    <span>Trae</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-wave" id="scrollWave" aria-hidden="true">
+    <svg viewBox="0 0 100 8" preserveAspectRatio="none">
+      <path id="scrollPath" d="M0 4 Q 25 4 50 4 T 100 4" />
+    </svg>
+  </div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#top" data-magnetic>
+      <span class="nav__mark">CRJ</span>
+      <span class="nav__name">陈若菁</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary" data-i18n-aria="nav.aria">
+      <a href="#work" data-section="work" data-i18n="nav.work">作品</a>
+      <a href="#about" data-section="about" data-i18n="nav.about">关于</a>
+      <a href="#contact" data-section="contact" data-i18n="nav.contact">联系</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="nav__reenter" id="reenterGate" type="button" data-magnetic data-i18n="nav.reenter" data-i18n-aria="nav.reenterAria" aria-label="回到聆听入口">
+        再次聆听
+      </button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-switch__btn is-active" data-lang="zh" aria-pressed="true">中</button>
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav__menu" id="menuBtn" type="button" data-i18n-aria="nav.openMenu" aria-label="打开菜单">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button type="button" class="mobile-nav__reenter" id="reenterGateMobile" data-i18n="nav.reenter">再次聆听</button>
+    <a href="#work" data-i18n="nav.workMobile">作品</a>
+    <a href="#chapter-commercial" data-i18n="chapters.commercial">广告项目</a>
+    <a href="#chapter-film" data-i18n="chapters.film">影视内容</a>
+    <a href="#chapter-spatial" data-i18n="chapters.spatial">空间音频</a>
+    <a href="#chapter-interactive" data-i18n="chapters.interactive">交互装置</a>
+    <a href="#chapter-live" data-i18n="chapters.live">现场综艺</a>
+    <a href="#about" data-i18n="nav.aboutMobile">关于</a>
+    <a href="#contact" data-i18n="nav.contactMobile">联系</a>
+  </div>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__atmosphere" aria-hidden="true"></div>
+
+      <div class="hero__layout">
+        <div class="hero__content">
+          <p class="hero__brand reveal" data-reveal>
+            <span class="hero__brand-zh" data-i18n="hero.brand">陈若菁</span>
+            <span class="hero__brand-sep">·</span>
+            <span class="hero__brand-en">RUOJING CHEN</span>
+          </p>
+          <h1 class="hero__title reveal" data-reveal>
+            <span class="hero__title-main" data-i18n="hero.title">塑造可被听见的空间</span>
+            <span class="hero__title-sub" data-i18n="hero.titleSub">Space you can hear.</span>
+          </h1>
+          <p class="hero__invite reveal" data-reveal data-i18n="hero.invite">
+            有的声音为品牌校准；有的留给自己的叙事。
+          </p>
+          <p class="hero__lead reveal" data-reveal data-i18n="hero.lead">
+            广告声音 · 影视声音 · 空间音频 · 交互声景 · 现场综艺
+          </p>
+          <div class="hero__cta reveal" data-reveal>
+            <a class="btn btn--primary" href="#work" data-magnetic>
+              <span data-i18n="hero.ctaWork">浏览作品</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#contact" data-magnetic data-i18n="hero.ctaContact">取得联系</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#work" data-i18n-aria="hero.scrollAria" aria-label="向下滚动">
+        <span data-i18n="hero.scroll">滚动</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- Work index + chapters -->
+    <section class="section work" id="work">
+      <div class="section__head">
+        <div>
+          <p class="section__eyebrow reveal" data-reveal data-i18n="work.eyebrow">Portfolio</p>
+          <h2 class="section__title reveal" data-reveal data-i18n="work.title">作品档案</h2>
+        </div>
+        <p class="section__desc reveal" data-reveal data-i18n="work.desc">
+          五种档案，同一种聆听。广告与产线偏交付与标准；影视与游戏交互里，留下更多个人艺术判断。
+        </p>
+      </div>
+
+      <nav class="chapter-index reveal" data-reveal aria-label="作品分区">
+        <a class="chapter-index__item" href="#chapter-commercial">
+          <span class="chapter-index__num">01</span>
+          <span class="chapter-index__label" data-i18n="chapters.commercial">广告项目</span>
+        </a>
+        <a class="chapter-index__item" href="#chapter-film">
+          <span class="chapter-index__num">02</span>
+          <span class="chapter-index__label" data-i18n="chapters.film">影视内容</span>
+        </a>
+        <a class="chapter-index__item" href="#chapter-spatial">
+          <span class="chapter-index__num">03</span>
+          <span class="chapter-index__label" data-i18n="chapters.spatial">空间音频 · 全景声</span>
+        </a>
+        <a class="chapter-index__item" href="#chapter-interactive">
+          <span class="chapter-index__num">04</span>
+          <span class="chapter-index__label" data-i18n="chapters.interactive">游戏交互与声音装置</span>
+        </a>
+        <a class="chapter-index__item" href="#chapter-live">
+          <span class="chapter-index__num">05</span>
+          <span class="chapter-index__label" data-i18n="chapters.live">现场与综艺</span>
+        </a>
+      </nav>
+
+      <!-- 01 Commercial -->
+      <article class="chapter" id="chapter-commercial" data-chapter="commercial">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">01</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.commercial">广告项目</h3>
+            <p class="chapter__lead" data-i18n="commercial.lead">按片型区分 TVC、宣传片与竖屏平台投放；汽车精选单独主推，扇区左右开合翻阅。</p>
+          </div>
+        </header>
+
+        <div class="auto-spotlight reveal" data-reveal>
+          <div class="auto-spotlight__head">
+            <p class="auto-spotlight__eyebrow" data-i18n="commercial.autoEyebrow">Featured · Automotive</p>
+            <h4 class="auto-spotlight__title" data-i18n="commercial.autoTitle">汽车广告精选</h4>
+            <p class="auto-spotlight__desc" data-i18n="commercial.autoDesc">座舱、公路与品牌质感——用更大的画幅呈现汽车声音项目。</p>
+          </div>
+          <div class="auto-rail" id="autoRail"></div>
+        </div>
+
+        <div class="fan-stage reveal" data-reveal id="fanStage">
+          <div class="fan-stage__hint">
+            <span data-i18n="commercial.fanHint">在扇区左右移动鼠标开合翻阅 · 点击封面观看</span>
+            <div class="fan-stage__nav">
+              <button type="button" class="fan-nav" id="fanPrev" aria-label="上一个">‹</button>
+              <button type="button" class="fan-nav" id="fanNext" aria-label="下一个">›</button>
+            </div>
+          </div>
+
+          <div class="fan-deck-wrap">
+            <div class="fan-zone fan-zone--left" id="fanZoneLeft" aria-hidden="true">
+              <span data-i18n="commercial.zoneNew">最新</span>
+              <span class="fan-zone__arrow">←</span>
+            </div>
+            <div class="fan-deck" id="fanDeck" aria-live="polite"></div>
+            <div class="fan-zone fan-zone--right" id="fanZoneRight" aria-hidden="true">
+              <span class="fan-zone__arrow">→</span>
+              <span data-i18n="commercial.zoneOld">更早</span>
+            </div>
+          </div>
+
+          <div class="fan-now" id="fanNow">
+            <p class="fan-now__year" id="fanYear">2025</p>
+            <h4 class="fan-now__title" id="fanTitle"></h4>
+            <p class="fan-now__meta" id="fanMeta"></p>
+            <button type="button" class="btn btn--primary fan-now__play" id="fanPlay">
+              <span data-i18n="commercial.play">观看成片</span>
+            </button>
+          </div>
+
+          <div class="ad-timeline" id="adTimeline">
+            <div class="ad-timeline__track">
+              <div class="ad-timeline__progress" id="adTimelineProgress"></div>
+            </div>
+            <div class="ad-timeline__marks" id="adTimelineMarks"></div>
+            <div class="ad-timeline__dots" id="adTimelineDots"></div>
+          </div>
+
+          <div class="ad-role-list" id="adRoleList" aria-label="作品角色一览"></div>
+        </div>
+
+        <div class="module-row reveal" data-reveal>
+          <div class="module module--archive module--archive-full archive-fold" data-archive-fold>
+            <div class="archive-fold__head">
+              <div>
+                <p class="module__eyebrow" data-i18n="module.archive">工作现场</p>
+                <h4 class="module__title" data-i18n="commercial.archiveTitle">棚内 / 拍摄现场</h4>
+              </div>
+              <button
+                type="button"
+                class="archive-fold__toggle"
+                aria-expanded="false"
+                data-i18n-aria="commercial.archiveToggleAria"
+                aria-label="展开或收起工作现场照片"
+              >
+                <span class="archive-fold__count">12</span>
+                <span class="archive-fold__label" data-fold-label data-i18n="commercial.archiveExpand">展开看板</span>
+              </button>
+            </div>
+            <div class="archive-fold__panel" hidden>
+            <div class="archive-grid archive-grid--photos">
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-01.jpg" aria-label="广告片场 01">
+                <img src="assets/commercial/onset/onset-01.jpg" alt="广告片场 01" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-02.jpg" aria-label="广告片场 02">
+                <img src="assets/commercial/onset/onset-02.jpg" alt="广告片场 02" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-03.jpg" aria-label="广告片场 03">
+                <img src="assets/commercial/onset/onset-03.jpg" alt="广告片场 03" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-04.jpg" aria-label="广告片场 04">
+                <img src="assets/commercial/onset/onset-04.jpg" alt="广告片场 04" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-05.jpg" aria-label="广告片场 05">
+                <img src="assets/commercial/onset/onset-05.jpg" alt="广告片场 05" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-06.jpg" aria-label="广告片场 06">
+                <img src="assets/commercial/onset/onset-06.jpg" alt="广告片场 06" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-07.jpg" aria-label="广告片场 07">
+                <img src="assets/commercial/onset/onset-07.jpg" alt="广告片场 07" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-08.jpg" aria-label="广告片场 08">
+                <img src="assets/commercial/onset/onset-08.jpg" alt="广告片场 08" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-09.jpg" aria-label="广告片场 09">
+                <img src="assets/commercial/onset/onset-09.jpg" alt="广告片场 09" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-10.jpg" aria-label="广告片场 10">
+                <img src="assets/commercial/onset/onset-10.jpg" alt="广告片场 10" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-11.jpg" aria-label="广告片场 11">
+                <img src="assets/commercial/onset/onset-11.jpg" alt="广告片场 11" loading="lazy" />
+              </button>
+              <button type="button" class="archive-shot" data-full="assets/commercial/onset/onset-12.jpg" aria-label="广告片场 12">
+                <img src="assets/commercial/onset/onset-12.jpg" alt="广告片场 12" loading="lazy" />
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 Film -->
+      <article class="chapter" id="chapter-film" data-chapter="film">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">02</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.film">影视内容</h3>
+            <p class="chapter__lead" data-i18n="film.lead">影像里的私人声场——从同期到环绕后期，把叙事骨架交还给声音。</p>
+          </div>
+        </header>
+
+        <div class="work-grid">
+          <article class="project reveal" data-reveal data-project="between-the-shadow">
+            <button class="project__hit" type="button" data-i18n-aria="projects.bts.aria" aria-label="查看：阴翳之间">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">01</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Thriller</span><span>Sound Post</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.bts.title">惊悚短片《阴翳之间》</h4>
+                <p class="project__role" data-i18n="projects.bts.role">声音后期</p>
+                <p class="project__excerpt" data-i18n="projects.bts.excerpt">2024 · Fixion Fest / NOX / Panic Fest / Rhode Island IFF Official Selection。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="mirage">
+            <button class="project__hit" type="button" data-i18n-aria="projects.mirage.aria" aria-label="查看：蜃楼">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">02</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Suspense</span><span>Sound Post</span><span>Fixion</span></div>
+                <h4 class="project__title" data-i18n="projects.mirage.title">悬疑片《蜃楼》</h4>
+                <p class="project__role" data-i18n="projects.mirage.role">声音后期</p>
+                <p class="project__excerpt" data-i18n="projects.mirage.excerpt">Fixion Fest 最佳中长片 · 可听混音版本，可看获奖海报。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="rain-city">
+            <button class="project__hit" type="button" data-i18n-aria="projects.rain.aria" aria-label="查看：去卅城看雨">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">03</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>5.1</span><span>Sound Direction</span><span>2021</span></div>
+                <h4 class="project__title" data-i18n="projects.rain.title">微电影《去卅城看雨》</h4>
+                <p class="project__role" data-i18n="projects.rain.role">声音指导</p>
+                <p class="project__excerpt" data-i18n="projects.rain.excerpt">2021 制作 · 点开可看成片、声音设计报告与工作影像。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="early-spring">
+            <button class="project__hit" type="button" data-i18n-aria="projects.spring.aria" aria-label="查看：初春">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">04</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Drama</span><span>Sound Post</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.spring.title">剧情片《初春》</h4>
+                <p class="project__role" data-i18n="projects.spring.role">声音后期</p>
+                <p class="project__excerpt" data-i18n="projects.spring.excerpt">2024 制作 · Questing in the Spring · 点开可看成片。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="birdy">
+            <button class="project__hit" type="button" data-i18n-aria="projects.birdy.aria" aria-label="查看：Birdy">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">05</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Film</span><span>International</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.birdy.title">《Birdy》</h4>
+                <p class="project__role" data-i18n="projects.birdy.role">声音指导</p>
+                <p class="project__excerpt" data-i18n="projects.birdy.excerpt">2024 · 成片、场记单与分镜。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="thirst">
+            <button class="project__hit" type="button" data-i18n-aria="projects.thirst.aria" aria-label="查看：Thirst">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">06</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Film</span><span>International</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.thirst.title">《Thirst》</h4>
+                <p class="project__role" data-i18n="projects.thirst.role">声音指导</p>
+                <p class="project__excerpt" data-i18n="projects.thirst.excerpt">2024 · 成片与远程声音反馈等工作影像。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+      </article>
+
+      <!-- 03 Spatial -->
+      <article class="chapter" id="chapter-spatial" data-chapter="spatial">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">03</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.spatial">空间音频 · 全景声</h3>
+            <p class="chapter__lead" data-i18n="spatial.lead">围绕喜马拉雅全景声有声剧产线：人工制作、AIGC 结构化交付、Agent Skill、主观测评与能量分析。</p>
+          </div>
+        </header>
+
+        <div class="work-grid">
+          <article class="project reveal" data-reveal data-project="atmos-pipeline">
+            <button class="project__hit" type="button" data-i18n-aria="projects.atmos.aria" aria-label="查看：全景声产线">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">01</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Dolby Atmos</span><span>Audio Vivid</span><span>WANOS</span></div>
+                <h4 class="project__title" data-i18n="projects.atmos.title">全景声有声剧产线</h4>
+                <p class="project__role" data-i18n="projects.atmos.role">车联网空间音频制作负责人 · 喜马拉雅</p>
+                <p class="project__excerpt" data-i18n="projects.atmos.excerpt">人工预告 · AIGC JSON · Skill 能力卡 · 主观测评 · 能量分析——下方分区填补。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+
+        <!-- A · 人工制作有声剧预告 -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">A</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockA.title">人工制作 · 有声剧预告</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockA.lead">放置可公开的立体声 /  binaural 预告片段（建议 30–90 秒），比全片更适合作品集。</p>
+            </div>
+          </header>
+          <div class="spatial-fill">
+            <div class="spatial-slot spatial-slot--audio">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.audio">音频位</span>
+              <p data-i18n="spatial.blockA.slot1">预告 01 · 剧名 / 格式（Atmos→折混）</p>
+            </div>
+            <div class="spatial-slot spatial-slot--audio">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.audio">音频位</span>
+              <p data-i18n="spatial.blockA.slot2">预告 02 · 剧名 / 格式</p>
+            </div>
+            <div class="spatial-slot spatial-slot--audio">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.audio">音频位</span>
+              <p data-i18n="spatial.blockA.slot3">预告 03 · 剧名 / 格式</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- B · AIGC JSON -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">B</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockB.title">AIGC 制作 · JSON 结构化交付</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockB.lead">你负责撰写 / 校对的剧集 JSON：可放脱敏截图或删掉剧名、ID 后的片段。</p>
+            </div>
+          </header>
+          <div class="spatial-fill spatial-fill--shots">
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot1">JSON 截图 01 · 场景 / 对象结构</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot2">JSON 截图 02 · 空间 / 路由字段</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot3">JSON 截图 03 · 质检相关字段</p>
+            </div>
+            <div class="spatial-slot spatial-slot--note">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">说明</span>
+              <p data-i18n="spatial.blockB.note">建议：打码剧名与内部 ID；保留字段命名与层级，体现你对产线 schema 的理解。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- C · Skills（脱敏） -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">C</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockC.title">Agent Skill · 能力卡（脱敏）</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockC.lead">公司帐号 Skill 不便外发源文件。用「输入 → 动作 → 输出 / 指标」能力卡呈现即可，不贴代码与内部路径。</p>
+            </div>
+          </header>
+          <div class="spatial-fill spatial-fill--cards">
+            <article class="spatial-card">
+              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card1.eye">Skill 01</p>
+              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card1.title">分轨 / 版本一致性扫描</h5>
+              <p class="spatial-card__body" data-i18n="spatial.blockC.card1.body">填写：触发条件、检查项、失败时如何提示交付。</p>
+            </article>
+            <article class="spatial-card">
+              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card2.eye">Skill 02</p>
+              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card2.title">转码 / 规格校验助手</h5>
+              <p class="spatial-card__body" data-i18n="spatial.blockC.card2.body">填写：对接格式（Atmos / Audio Vivid / WANOS）、自动核对项。</p>
+            </article>
+            <article class="spatial-card">
+              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card3.eye">Skill 03</p>
+              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card3.title">（自定义名称）</h5>
+              <p class="spatial-card__body" data-i18n="spatial.blockC.card3.body">填写：解决的产线痛点 + 上线后节省的人工步骤。</p>
+            </article>
+            <div class="spatial-slot spatial-slot--note spatial-slot--wide">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">呈现建议</span>
+              <p data-i18n="spatial.blockC.note">可再加一张「工作流示意」图（手绘 / FigJam 导出）：人工节点与 Agent 节点并列，不出现公司内网地址。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- D · 主观测评 -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">D</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockD.title">主观测评 · 方案设计</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockD.lead">双盲 / 半盲听测框架、量表维度、样本选取与听音环境——比结论截图更能体现方法论。</p>
+            </div>
+          </header>
+          <div class="spatial-fill">
+            <div class="spatial-slot spatial-slot--doc">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">文档位</span>
+              <p data-i18n="spatial.blockD.slot1">测评方案 PDF / 封面 + 目录页</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockD.slot2">量表维度表 · 定位 / 包围 / 清晰度等</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockD.slot3">结果摘要图 · 可打码样本名</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- E · 能量分析 -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">E</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockE.title">音频能量分析报告</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockE.lead">响度 / 频段能量 / bed–object 能量分布等客观报告封面与关键页。</p>
+            </div>
+          </header>
+          <div class="spatial-fill">
+            <div class="spatial-slot spatial-slot--doc">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">报告位</span>
+              <p data-i18n="spatial.blockE.slot1">能量分析报告 · 封面</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
+              <p data-i18n="spatial.blockE.slot2">关键图表 01 · 如短时能量 / LUFS</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
+              <p data-i18n="spatial.blockE.slot3">关键图表 02 · 如频段 / 通道对比</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="module-row reveal" data-reveal>
+          <div class="module module--archive module--archive-full">
+            <p class="module__eyebrow" data-i18n="module.archive">工作现场</p>
+            <h4 class="module__title" data-i18n="spatial.archiveTitle">听音室 / 产线现场</h4>
+            <div class="archive-grid">
+              <div class="archive-slot" data-i18n="slot.photo">放置听音室照片</div>
+              <div class="archive-slot" data-i18n="slot.diagram">放置阵列示意 / 流程图</div>
+              <div class="archive-slot archive-slot--wide" data-i18n="slot.report">放置测评 / 报告现场照</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Interactive -->
+      <article class="chapter" id="chapter-interactive" data-chapter="interactive">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">04</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.interactive">游戏交互与声音装置</h3>
+            <p class="chapter__lead" data-i18n="interactive.lead">游戏与装置是我更自由的声景实验——声音随行为生长，触发、反馈、沉浸。</p>
+          </div>
+        </header>
+
+        <div class="work-grid">
+          <article class="project reveal" data-reveal data-project="game-soundscape">
+            <button class="project__hit" type="button" data-i18n-aria="projects.game.aria" aria-label="查看：游戏声景">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">01</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Wwise</span><span>Unity</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.game.title">交互游戏声景</h4>
+                <p class="project__role" data-i18n="projects.game.role">独立声音设计 / 系统设计</p>
+                <p class="project__excerpt" data-i18n="projects.game.excerpt">2024 · 演示 / 说明视频，并可下载 macOS 试玩包。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="installation">
+            <button class="project__hit" type="button" data-i18n-aria="projects.install.aria" aria-label="查看：声音装置 Presence">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">02</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>MaxMSP</span><span>Arduino</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.install.title">声音装置 · Presence</h4>
+                <p class="project__role" data-i18n="projects.install.role">DMSP 2024 · MaxMSP / Arduino</p>
+                <p class="project__excerpt" data-i18n="projects.install.excerpt">2024 · 深海恐惧症交互装置：演示、Chaos 混合音、方案报告与工作影像。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="creative-coding">
+            <button class="project__hit" type="button" data-i18n-aria="projects.coding.aria" aria-label="查看：声音创意编码">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">03</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>MaxMSP</span><span>Creative Coding</span><span>2024</span></div>
+                <h4 class="project__title" data-i18n="projects.coding.title">声音创意编码</h4>
+                <p class="project__role" data-i18n="projects.coding.role">MaxMSP 交互声音设计</p>
+                <p class="project__excerpt" data-i18n="projects.coding.excerpt">2024 · 项目一 / 项目二演示与报告，以及笔记。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+      </article>
+
+      <!-- 05 Live & Variety -->
+      <article class="chapter" id="chapter-live" data-chapter="live">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">05</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.live">现场与综艺</h3>
+            <p class="chapter__lead" data-i18n="live.lead">跟组、录制、临场响应——在不可重来的现场里，保证声音可靠、可协作、可交付。</p>
+          </div>
+        </header>
+
+        <div class="work-grid">
+          <article class="project reveal" data-reveal data-project="rap-new-generation">
+            <button class="project__hit" type="button" data-i18n-aria="projects.rap.aria" aria-label="查看：说唱新世代">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">01</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Bilibili</span><span>Recording</span><span>2021.07–08</span></div>
+                <h4 class="project__title" data-i18n="projects.rap.title">《说唱新世代》</h4>
+                <p class="project__role" data-i18n="projects.rap.role">外籍音乐总监助理 / 录音工程师</p>
+                <p class="project__excerpt" data-i18n="projects.rap.excerpt">2021.07–08 · 宣传片关键帧 · 录制日程与录音曲目截图可查。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="variety-sets">
+            <button class="project__hit" type="button" data-i18n-aria="projects.variety.aria" aria-label="查看：浙江卫视综艺">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">02</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Zhejiang TV</span><span>2019</span><span>2021</span></div>
+                <h4 class="project__title" data-i18n="projects.variety.title">浙江卫视综艺 · 音频组</h4>
+                <p class="project__role" data-i18n="projects.variety.role">音频助理 / 音频组跟组</p>
+                <p class="project__excerpt" data-i18n="projects.variety.excerpt">2019《中国好声音》· 2021《王牌对王牌》《我就是演员》等。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+
+          <article class="project reveal" data-reveal data-project="yueyin-yitong">
+            <button class="project__hit" type="button" data-i18n-aria="projects.yueyin.aria" aria-label="查看：越音易通">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">03</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Mini Program</span><span>Yueju</span><span>2021</span></div>
+                <h4 class="project__title" data-i18n="projects.yueyin.title">越音易通</h4>
+                <p class="project__role" data-i18n="projects.yueyin.role">发音音库录音 / 音频处理</p>
+                <p class="project__excerpt" data-i18n="projects.yueyin.excerpt">2021 · 微信小程序 · 浙江艺术职业学院；微信内搜索体验。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+      </article>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="section__eyebrow reveal" data-reveal data-i18n="about.eyebrow">About</p>
+          <h2 class="section__title reveal" data-reveal data-i18n="about.title">关于</h2>
+          <p class="about__lead reveal" data-reveal data-i18n="about.lead">
+            我是陈若菁，声音设计者。现于喜马拉雅负责车联网空间音频与全景声内容制作；此前在爱丁堡大学攻读声音设计硕士，本科毕业于浙江传媒学院录音艺术专业。
+          </p>
+          <p class="about__body reveal" data-reveal data-i18n="about.body">
+            我的实践横跨影视、广告、空间音频、交互装置与现场综艺。商业项目追求可交付的标准与质感；影视与游戏交互里，留下更多个人艺术判断。技术是工具，聆听是方法。
+          </p>
+          <dl class="about__facts reveal" data-reveal>
+            <div>
+              <dt data-i18n="about.edu">教育</dt>
+              <dd data-i18n-html="about.eduValue">爱丁堡大学 · 声音设计硕士<br />浙江传媒学院 · 录音艺术</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.tools">工具</dt>
+              <dd data-i18n-html="about.toolsValue">Pro Tools · Logic · Reaper<br />Wwise · MaxMSP · Unity</dd>
+            </div>
+            <div>
+              <dt data-i18n="about.role">现任</dt>
+              <dd data-i18n-html="about.roleValue">喜马拉雅 · 车联网空间音频<br />全景声制作负责人</dd>
+            </div>
+          </dl>
+        </div>
+        <aside class="about__panel reveal" data-reveal>
+          <p class="about__panel-label" data-i18n="about.notes">聆听笔记</p>
+          <blockquote data-i18n="about.quote">
+            「好的声音设计，不是被听见，而是被相信——你相信那个空间是真实的。」
+          </blockquote>
+          <div class="about__signal" aria-hidden="true">
+            <canvas id="signalCanvas" width="320" height="80"></canvas>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact__inner">
+        <p class="section__eyebrow reveal" data-reveal data-i18n="contact.eyebrow">Contact</p>
+        <h2 class="contact__title reveal" data-reveal data-i18n="contact.title">一起听见下一步</h2>
+        <p class="contact__lead reveal" data-reveal data-i18n="contact.lead">
+          项目合作、声音咨询，或只是聊聊空间音频——欢迎写信。
+        </p>
+        <a class="contact__email reveal" data-reveal href="mailto:chenruojing0@gmail.com" data-magnetic>
+          chenruojing0@gmail.com
+        </a>
+        <div class="contact__meta reveal" data-reveal>
+          <span data-i18n="contact.city">上海</span>
+          <span class="contact__dot"></span>
+          <span>(+86) 159 8883 4836</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span data-i18n="footer.copy">陈若菁 · 声音设计</span></p>
+    <p class="footer__note" data-i18n="footer.note">以聆听空间为起点而建。</p>
+  </footer>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="overlay__backdrop" data-close></div>
+    <div class="overlay__panel" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+      <button class="overlay__close" type="button" data-close data-i18n-aria="overlay.close" aria-label="关闭">
+        <span></span><span></span>
+      </button>
+      <div class="overlay__content" id="overlayContent"></div>
+    </div>
+  </div>
+
+  <!-- Commercial video player -->
+  <div class="player" id="adPlayer" aria-hidden="true">
+    <div class="player__backdrop" data-player-close></div>
+    <div class="player__panel" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+      <button class="player__close" type="button" data-player-close aria-label="关闭">
+        <span></span><span></span>
+      </button>
+      <div class="player__meta">
+        <p class="player__year" id="playerYear"></p>
+        <h3 class="player__title" id="playerTitle"></h3>
+        <p class="player__role" id="playerRole"></p>
+      </div>
+      <div class="player__frame">
+        <video id="playerVideo" controls playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-lightbox" id="pageLightbox" hidden>
+    <button type="button" class="page-lightbox__close" data-page-lightbox-close aria-label="关闭">×</button>
+    <img id="pageLightboxImg" alt="" />
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/projects-media.js"></script>
+  <script src="js/commercial.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

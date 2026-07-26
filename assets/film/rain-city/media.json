@@ -1,0 +1,277 @@
+{
+  "video": "assets/film/rain-city/film.mp4",
+  "photos": [
+    {
+      "src": "assets/film/rain-city/photos/still-01.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照1",
+        "en": "still-01.jpg"
+      },
+      "caption": {
+        "zh": "剧照 1",
+        "en": "Production still 1"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-02.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照2",
+        "en": "still-02.jpg"
+      },
+      "caption": {
+        "zh": "剧照 2",
+        "en": "Production still 2"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-03.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照3",
+        "en": "still-03.jpg"
+      },
+      "caption": {
+        "zh": "剧照 3",
+        "en": "Production still 3"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-04.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照4",
+        "en": "still-04.jpg"
+      },
+      "caption": {
+        "zh": "剧照 4",
+        "en": "Production still 4"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-05.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照5",
+        "en": "still-05.jpg"
+      },
+      "caption": {
+        "zh": "剧照 5",
+        "en": "Production still 5"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-06.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "剧照6",
+        "en": "still-06.jpg"
+      },
+      "caption": {
+        "zh": "剧照 6",
+        "en": "Production still 6"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/still-promo.jpg",
+      "cat": "still",
+      "alt": {
+        "zh": "宣传剧照",
+        "en": "still-promo.jpg"
+      },
+      "caption": {
+        "zh": "宣传剧照",
+        "en": "Promo still"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/onset-01.jpg",
+      "cat": "onset",
+      "alt": {
+        "zh": "拍摄现场图",
+        "en": "onset-01.jpg"
+      },
+      "caption": {
+        "zh": "拍摄现场",
+        "en": "On set"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/onset-02.jpg",
+      "cat": "onset",
+      "alt": {
+        "zh": "拍摄现场图2",
+        "en": "onset-02.jpg"
+      },
+      "caption": {
+        "zh": "拍摄现场",
+        "en": "On set"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/onset-kickoff.jpg",
+      "cat": "onset",
+      "alt": {
+        "zh": "重庆开机合照",
+        "en": "onset-kickoff.jpg"
+      },
+      "caption": {
+        "zh": "重庆开机合照",
+        "en": "Kickoff group photo, Chongqing"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/onset-script.jpg",
+      "cat": "onset",
+      "alt": {
+        "zh": "我和场记",
+        "en": "onset-script.jpg"
+      },
+      "caption": {
+        "zh": "与场记",
+        "en": "With script supervisor"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/onset-crew.jpg",
+      "cat": "onset",
+      "alt": {
+        "zh": "摄影师导演和我",
+        "en": "onset-crew.jpg"
+      },
+      "caption": {
+        "zh": "摄影师、导演与我",
+        "en": "DoP, director, and me"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/studio-director.jpg",
+      "cat": "studio",
+      "alt": {
+        "zh": "导演和我在录音棚沟通声音",
+        "en": "studio-director.jpg"
+      },
+      "caption": {
+        "zh": "录音棚与导演沟通声音",
+        "en": "Studio session with director"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/session-01.png",
+      "cat": "session",
+      "alt": {
+        "zh": "工程截图1",
+        "en": "session-01.png"
+      },
+      "caption": {
+        "zh": "工程截图 1",
+        "en": "Session screenshot 1"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/session-02.png",
+      "cat": "session",
+      "alt": {
+        "zh": "工程截图2",
+        "en": "session-02.png"
+      },
+      "caption": {
+        "zh": "工程截图 2",
+        "en": "Session screenshot 2"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/session-03.png",
+      "cat": "session",
+      "alt": {
+        "zh": "工程截图3",
+        "en": "session-03.png"
+      },
+      "caption": {
+        "zh": "工程截图 3",
+        "en": "Session screenshot 3"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/session-04.png",
+      "cat": "session",
+      "alt": {
+        "zh": "工程截图4",
+        "en": "session-04.png"
+      },
+      "caption": {
+        "zh": "工程截图 4",
+        "en": "Session screenshot 4"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/session-05.png",
+      "cat": "session",
+      "alt": {
+        "zh": "工程截图5",
+        "en": "session-05.png"
+      },
+      "caption": {
+        "zh": "工程截图 5",
+        "en": "Session screenshot 5"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/festival-award.jpg",
+      "cat": "festival",
+      "alt": {
+        "zh": "学校影展评选最佳影片",
+        "en": "festival-award.jpg"
+      },
+      "caption": {
+        "zh": "学校影展 · 最佳影片",
+        "en": "Campus festival · Best Film"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/festival-crew.jpg",
+      "cat": "festival",
+      "alt": {
+        "zh": "学校影展颁奖典礼剧组部分成员合照",
+        "en": "festival-crew.jpg"
+      },
+      "caption": {
+        "zh": "影展颁奖典礼合照",
+        "en": "Awards ceremony crew photo"
+      }
+    },
+    {
+      "src": "assets/film/rain-city/photos/festival-premiere.jpg",
+      "cat": "festival",
+      "alt": {
+        "zh": "学校首映影展我和剪辑",
+        "en": "festival-premiere.jpg"
+      },
+      "caption": {
+        "zh": "首映影展 · 与剪辑",
+        "en": "Premiere · with editor"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "design-report",
+      "title": {
+        "zh": "同期声音方案",
+        "en": "Production sound plan"
+      },
+      "file": "assets/film/rain-city/reports/design-report.docx",
+      "text": "assets/film/rain-city/reports/design-report.txt"
+    },
+    {
+      "id": "statement",
+      "title": {
+        "zh": "声音作品阐述",
+        "en": "Sound project statement"
+      },
+      "file": "assets/film/rain-city/reports/statement.docx",
+      "text": "assets/film/rain-city/reports/statement.txt"
+    }
+  ]
+}

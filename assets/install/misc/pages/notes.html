@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+  @page { margin: 18mm; }
+  body {
+    font-family: "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif;
+    line-height: 1.65;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    color: #1a1a1a;
+    background: #fff;
+    font-size: 15px;
+  }
+  h1 { font-size: 22px; margin: 0 0 1rem; }
+  p { margin: 0.7rem 0; }
+  ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  li { margin: 0.28rem 0; }
+  img { max-width: 100%; height: auto; display: block; margin: 1rem 0; border: 1px solid #ddd; }
+  strong { color: #111; }
+</style></head><body>
+<h1>Creative Coding for sound</h1><p><strong>Max简介:</strong></p><ul><li>Metro 节拍器  单位是ms   </li></ul><p> Eg: Metro 500 意义为每个拍子之间间隔500ms,即半秒</p><ul><li>Toggle box切换盒  快捷键t    打开或者关闭on and off链路</li><li>Buttons box 按钮 快捷键b  </li><li>Noteout注释输出;音符midi输出</li><li>Makenote 生成midi音符 后面数字100 1000意义是什么?</li></ul><p><img src="media/4e712a69da.png" /></p><p>后者数字表示音符时长duration,单位1000ms,即1s,前者数字表示音符速度velocity</p><ul><li>键入键盘60是中央C,61是c sharp,62是D,上升12就是一个八度(12个半音),这是一种midi pitch system</li><li>Kslider 回车出现键盘</li><li>Number 快捷键i   该键入的仅输出整数 像一个随时改变可调控的变量</li></ul><p>Flonum  (float number)快捷键f   输出带小数的正负浮点数据</p><ul><li>Max 数据传输：负责消息、midi数据、列表处理、if -then条件 ；（2）MSP 数字音频信号处理 digital audio signal processing；优先排序确保音频不会中断延迟（3）Jitter 视频处理：实时视频、OpenGL图形、矩阵处理。</li><li>Sine tone generator正弦音调发生器在function里用cycle~表示(循环;周期)              tilde波浪号~</li></ul><p>sinusoidal窦状隙；窦状小管；正弦曲线；正弦曲线的</p><p>通常cycle~后接的是你想发送的正弦波的频率数比如440(就是</p><p>oscillator振荡器做的事)</p><p>灰色连接线连接的通常不是音频数据,但是黄灰色间断的连线连接的是音频数据audio data</p><ul><li>live.scope<img src="media/010de7b961.png" />可视化音频信号</li><li>$美元符号本质上是一个占位符,以便于稍后做更改,意思就是变量值,</li><li>Pete Batchelor max/msp tutorials适合新手课程;还有dearjohnreed也很适合新手;dude837对新手有点难度但是进阶课程很干货</li></ul><p><strong>将midi从max发送到另一个程序:</strong></p><ul><li>怎样将max的信号接入到reaper</li></ul><p>1.打开reaper菜单栏track里的insert virtual instrument on new track会弹出一个plugin窗口,里面会有一些安装好的效果器插件</p><p>选择后即创建好轨道且插入已选的效果器</p><p>2.将max 的midi data输入到reaper里,打开reaper的preferences,找到audio下的MIDI devices,主要关注input, from Max 1和from Max 2右侧默认显示的是disabled,但是需要双击将其勾选后,右侧会显示enabled + control ,点ok</p><p>3.在Max里将noteout的信息块按住cmd+双击勾选输出到from Max 1,即可以连接到reaper的插件下</p><p>Midi多轨道从max发送到reaper</p><h3>Shift + Z 缩小视图/Z放大视图</h3>
+</body></html>

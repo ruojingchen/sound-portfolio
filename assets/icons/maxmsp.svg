@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Max MSP">
+  <rect width="64" height="64" rx="14" fill="#525252"/>
+  <path fill="#5D5D5D" d="M0 12L52 64H14A14 14 0 0 1 0 50V12z"/>
+  <!-- soft highlight rings -->
+  <circle cx="32" cy="34" r="14" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.18"/>
+  <circle cx="38" cy="24" r="10" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.12"/>
+  <!-- signature cyan node -->
+  <circle cx="32" cy="34" r="7" fill="#AEFFFC"/>
+</svg>
