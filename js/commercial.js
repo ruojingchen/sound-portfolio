@@ -457,12 +457,18 @@ window.CRJ_ADS = (() => {
     playerYear.textContent = String(ad.year);
     playerTitle.innerHTML = titleWithFormat(ad);
     playerRole.textContent = label(ad.role);
-    playerVideo.src = ad.video;
+    playerVideo.pause();
+    playerVideo.removeAttribute("src");
+    playerVideo.load();
     playerVideo.poster = ad.poster;
+    playerVideo.src = ad.video;
+    playerVideo.load();
     player.classList.add("is-open");
     player.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    playerVideo.play().catch(() => {});
+    const tryPlay = () => playerVideo.play().catch(() => {});
+    if (playerVideo.readyState >= 2) tryPlay();
+    else playerVideo.addEventListener("canplay", tryPlay, { once: true });
   }
 
   function closePlayer() {
