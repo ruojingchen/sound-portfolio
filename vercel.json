@@ -20,7 +20,7 @@
     {
       "source": "/(.*)\\.(js|css|png|jpg|jpeg|webp|svg|ico)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
       ]
     }
   ]

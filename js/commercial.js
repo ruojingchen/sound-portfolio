@@ -4,6 +4,11 @@
  * - Mouse-scrub fan: left = newest, right = earlier
  */
 window.CRJ_ADS = (() => {
+  /** Bump when media/player changes so browsers skip stale caches */
+  const ASSET_VER = "20260728";
+  const withVer = (path) =>
+    path.includes("?") ? `${path}&v=${ASSET_VER}` : `${path}?v=${ASSET_VER}`;
+
   const DEFAULT_ROLE = {
     zh: "声音设计 / 混音师",
     en: "Sound Design / Mixing Engineer",
@@ -267,7 +272,7 @@ window.CRJ_ADS = (() => {
         return `
         <button type="button" class="auto-card" data-index="${i}">
           <div class="auto-card__media">
-            <img src="${ad.poster}" alt="" loading="lazy" />
+            <img src="${withVer(ad.poster)}" alt="" loading="lazy" />
             <span class="auto-card__play" aria-hidden="true">▶</span>
           </div>
           <div class="auto-card__body">
@@ -294,7 +299,7 @@ window.CRJ_ADS = (() => {
       btn.className = `fan-card${ad.kind === "auto" ? " is-auto" : ""}`;
       btn.dataset.index = String(i);
       btn.innerHTML = `
-        <img src="${ad.poster}" alt="" loading="lazy" />
+        <img src="${withVer(ad.poster)}" alt="" loading="lazy" />
         <span class="fan-card__veil"></span>
         <span class="fan-card__year">${ad.year}</span>
         <span class="fan-card__role">${label(ad.role)}</span>
@@ -464,8 +469,8 @@ window.CRJ_ADS = (() => {
     player.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    const src = ad.video; // same relative path style as posters (proven on-page)
-    const poster = ad.poster;
+    const src = withVer(ad.video); // cache-bust so shared links get the latest encode
+    const poster = withVer(ad.poster);
 
     playerVideo.pause();
     playerVideo.controls = true;
