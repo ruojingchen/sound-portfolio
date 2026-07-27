@@ -3078,12 +3078,14 @@ body[data-lang="en"] .hero__title-sub {
 .player__backdrop {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: rgba(4, 5, 7, 0.82);
   backdrop-filter: blur(10px);
 }
 
 .player__panel {
   position: relative;
+  z-index: 1;
   width: min(960px, calc(100% - 2rem));
   max-height: 92svh;
   overflow: auto;
@@ -3093,6 +3095,7 @@ body[data-lang="en"] .hero__title-sub {
   padding: 1.5rem;
   transform: translateY(20px) scale(0.98);
   transition: transform 0.45s var(--ease-out);
+  pointer-events: auto;
 }
 
 .player.is-open .player__panel {
@@ -3147,9 +3150,12 @@ body[data-lang="en"] .hero__title-sub {
 }
 
 .player__frame {
+  position: relative;
+  z-index: 1;
   background: #000;
   border: 1px solid var(--line);
   aspect-ratio: 16 / 9;
+  min-height: 200px;
 }
 
 .player__frame video {
@@ -3158,6 +3164,9 @@ body[data-lang="en"] .hero__title-sub {
   display: block;
   object-fit: contain;
   background: #000;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 700px) {

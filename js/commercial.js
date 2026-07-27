@@ -457,41 +457,56 @@ window.CRJ_ADS = (() => {
     playerYear.textContent = String(ad.year);
     playerTitle.innerHTML = titleWithFormat(ad);
     playerRole.textContent = label(ad.role);
+    delete playerRole?.dataset.errShown;
 
-    const src = ad.video.startsWith("/") ? ad.video : `/${ad.video}`;
-    playerVideo.pause();
-    playerVideo.poster = ad.poster.startsWith("/") ? ad.poster : `/${ad.poster}`;
-    // Avoid empty load() — some browsers keep a sticky MediaError across src swaps
-    playerVideo.removeAttribute("src");
-    while (playerVideo.firstChild) playerVideo.removeChild(playerVideo.firstChild);
-    const source = document.createElement("source");
-    source.src = src;
-    source.type = "video/mp4";
-    playerVideo.appendChild(source);
-    playerVideo.load();
-
+    // Show shell first — some browsers defer media load while visibility:hidden
     player.classList.add("is-open");
     player.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+
+    const src = ad.video; // same relative path style as posters (proven on-page)
+    const poster = ad.poster;
+
+    playerVideo.pause();
+    playerVideo.controls = true;
+    playerVideo.setAttribute("playsinline", "");
+    playerVideo.setAttribute("webkit-playsinline", "");
+    playerVideo.poster = poster;
+    // Direct src is more reliable than <source> swaps across browsers
+    playerVideo.src = src;
 
     const onError = () => {
       console.error("[ad player]", src, playerVideo.error);
       if (playerRole && !playerRole.dataset.errShown) {
         playerRole.dataset.errShown = "1";
-        const prev = playerRole.textContent;
         playerRole.textContent =
           (document.body.dataset.lang === "en"
-            ? "Video failed to load — try refresh or another browser. "
-            : "成片加载失败，请强刷或换浏览器重试。 ") + prev;
+            ? "Video failed to load. "
+            : "成片加载失败。 ") + label(ad.role);
       }
     };
     playerVideo.addEventListener("error", onError, { once: true });
+
     const tryPlay = () => {
-      delete playerRole?.dataset.errShown;
-      playerVideo.play().catch(() => {});
+      // Muted autoplay is allowed; unmute after play starts so sound returns
+      const wasMuted = playerVideo.muted;
+      playerVideo.muted = true;
+      playerVideo
+        .play()
+        .then(() => {
+          playerVideo.muted = wasMuted;
+        })
+        .catch(() => {
+          playerVideo.muted = wasMuted;
+          // User can still press native controls
+        });
     };
+
     if (playerVideo.readyState >= 2) tryPlay();
-    else playerVideo.addEventListener("canplay", tryPlay, { once: true });
+    else {
+      playerVideo.addEventListener("loadeddata", tryPlay, { once: true });
+      playerVideo.addEventListener("canplay", tryPlay, { once: true });
+    }
   }
 
   function closePlayer() {
@@ -499,7 +514,6 @@ window.CRJ_ADS = (() => {
     player.setAttribute("aria-hidden", "true");
     playerVideo.pause();
     playerVideo.removeAttribute("src");
-    while (playerVideo.firstChild) playerVideo.removeChild(playerVideo.firstChild);
     playerVideo.load();
     delete playerRole?.dataset.errShown;
     document.body.style.overflow = "";
