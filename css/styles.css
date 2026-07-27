@@ -1442,6 +1442,47 @@ body[data-lang="en"] .hero__title-sub {
   }
 }
 
+.spatial-fill--audio {
+  gap: 1rem;
+}
+
+.spatial-audio {
+  margin: 0;
+  padding: 1rem 1.05rem 1.1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.spatial-audio__tag {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.spatial-audio__title {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.spatial-audio__meta {
+  margin: 0 0 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+.spatial-audio__player {
+  width: 100%;
+  height: 36px;
+  display: block;
+}
+
 .spatial-slot {
   min-height: 7.5rem;
   padding: 1rem 1.05rem;
