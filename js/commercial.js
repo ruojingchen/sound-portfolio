@@ -457,16 +457,39 @@ window.CRJ_ADS = (() => {
     playerYear.textContent = String(ad.year);
     playerTitle.innerHTML = titleWithFormat(ad);
     playerRole.textContent = label(ad.role);
+
+    const src = ad.video.startsWith("/") ? ad.video : `/${ad.video}`;
     playerVideo.pause();
+    playerVideo.poster = ad.poster.startsWith("/") ? ad.poster : `/${ad.poster}`;
+    // Avoid empty load() — some browsers keep a sticky MediaError across src swaps
     playerVideo.removeAttribute("src");
+    while (playerVideo.firstChild) playerVideo.removeChild(playerVideo.firstChild);
+    const source = document.createElement("source");
+    source.src = src;
+    source.type = "video/mp4";
+    playerVideo.appendChild(source);
     playerVideo.load();
-    playerVideo.poster = ad.poster;
-    playerVideo.src = ad.video;
-    playerVideo.load();
+
     player.classList.add("is-open");
     player.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    const tryPlay = () => playerVideo.play().catch(() => {});
+
+    const onError = () => {
+      console.error("[ad player]", src, playerVideo.error);
+      if (playerRole && !playerRole.dataset.errShown) {
+        playerRole.dataset.errShown = "1";
+        const prev = playerRole.textContent;
+        playerRole.textContent =
+          (document.body.dataset.lang === "en"
+            ? "Video failed to load — try refresh or another browser. "
+            : "成片加载失败，请强刷或换浏览器重试。 ") + prev;
+      }
+    };
+    playerVideo.addEventListener("error", onError, { once: true });
+    const tryPlay = () => {
+      delete playerRole?.dataset.errShown;
+      playerVideo.play().catch(() => {});
+    };
     if (playerVideo.readyState >= 2) tryPlay();
     else playerVideo.addEventListener("canplay", tryPlay, { once: true });
   }
@@ -476,7 +499,9 @@ window.CRJ_ADS = (() => {
     player.setAttribute("aria-hidden", "true");
     playerVideo.pause();
     playerVideo.removeAttribute("src");
+    while (playerVideo.firstChild) playerVideo.removeChild(playerVideo.firstChild);
     playerVideo.load();
+    delete playerRole?.dataset.errShown;
     document.body.style.overflow = "";
   }
 
