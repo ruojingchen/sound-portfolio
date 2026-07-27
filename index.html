@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260728c" />
+  <link rel="stylesheet" href="css/styles.css?v=20260728d" />
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -534,31 +534,37 @@
             <p class="spatial-block__num">A</p>
             <div>
               <h4 class="spatial-block__title" data-i18n="spatial.blockA.title">人工制作 · 有声剧预告</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockA.lead">网页可听立体声折混；下载 E-AC-3 Atmos ADM 可在本地播放器回放全景声多声道。</p>
+              <p class="spatial-block__lead" data-i18n="spatial.blockA.lead">扇形点选试听立体声折混；下载 E-AC-3 Atmos ADM 可在本地回放全景声多声道。海报可后续替换。</p>
             </div>
           </header>
-          <div class="spatial-fill spatial-fill--audio">
-            <article class="spatial-audio">
-              <p class="spatial-audio__tag" data-i18n="spatial.slot.audio">预告</p>
-              <h5 class="spatial-audio__title" data-i18n="spatial.blockA.t1.title">白马</h5>
-              <p class="spatial-audio__meta" data-i18n="spatial.blockA.t1.meta">Atmos 预告 · 网页立体声折混 · 2:01</p>
-              <audio class="spatial-audio__player" controls preload="metadata" playsinline src="assets/spatial/trailers/baima.m4a?v=20260728"></audio>
-              <a class="spatial-audio__dl" href="assets/spatial/trailers/baima-atmos-adm.mp4" download="白马_预告_Atmos_ADM.mp4" data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
-            </article>
-            <article class="spatial-audio">
-              <p class="spatial-audio__tag" data-i18n="spatial.slot.audio">预告</p>
-              <h5 class="spatial-audio__title" data-i18n="spatial.blockA.t2.title">狐小九</h5>
-              <p class="spatial-audio__meta" data-i18n="spatial.blockA.t2.meta">Atmos 预告 · 网页立体声折混 · 2:21</p>
-              <audio class="spatial-audio__player" controls preload="metadata" playsinline src="assets/spatial/trailers/huxiaojiu.m4a?v=20260728"></audio>
-              <a class="spatial-audio__dl" href="assets/spatial/trailers/huxiaojiu-atmos-adm.mp4" download="狐小九_预告_Atmos_ADM.mp4" data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
-            </article>
-            <article class="spatial-audio">
-              <p class="spatial-audio__tag" data-i18n="spatial.slot.audio">预告</p>
-              <h5 class="spatial-audio__title" data-i18n="spatial.blockA.t3.title">疯狂动物城</h5>
-              <p class="spatial-audio__meta" data-i18n="spatial.blockA.t3.meta">Atmos 预告 · 网页立体声折混 · 4:51</p>
-              <audio class="spatial-audio__player" controls preload="metadata" playsinline src="assets/spatial/trailers/zootopia.m4a?v=20260728"></audio>
-              <a class="spatial-audio__dl" href="assets/spatial/trailers/zootopia-atmos-adm.mp4" download="疯狂动物城_预告_Atmos_ADM.mp4" data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
-            </article>
+
+          <div class="spat-fan reveal" data-reveal id="spatFanStage">
+            <div class="spat-fan__hint">
+              <span data-i18n="spatial.blockA.fanHint">在扇区左右移动开合 · 点击封面播放</span>
+              <div class="spat-fan__nav">
+                <button type="button" class="fan-nav" id="spatFanPrev" aria-label="上一个">‹</button>
+                <button type="button" class="fan-nav" id="spatFanNext" aria-label="下一个">›</button>
+              </div>
+            </div>
+
+            <div class="spat-fan__deck-wrap">
+              <div class="spat-fan__deck" id="spatFanDeck" aria-live="polite"></div>
+            </div>
+
+            <div class="spat-fan__now" id="spatFanNow">
+              <p class="spat-fan__dur" id="spatFanDur">2:01</p>
+              <h4 class="spat-fan__title" id="spatFanTitle">白马</h4>
+              <p class="spat-fan__meta" id="spatFanMeta">Atmos 预告 · 网页立体声折混</p>
+              <audio class="spat-fan__audio" id="spatFanAudio" controls preload="metadata" playsinline></audio>
+              <div class="spat-fan__actions">
+                <button type="button" class="btn btn--primary" id="spatFanPlay">
+                  <span data-i18n="spatial.blockA.play">播放试听</span>
+                </button>
+                <a class="spatial-audio__dl spat-fan__dl" id="spatFanDl" href="#" download data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
+              </div>
+            </div>
+
+            <div class="spat-fan__dots" id="spatFanDots"></div>
           </div>
         </section>
 
@@ -905,9 +911,10 @@
     <img id="pageLightboxImg" alt="" />
   </div>
 
-  <script src="js/i18n.js?v=20260728c"></script>
-  <script src="js/projects-media.js?v=20260728c"></script>
-  <script src="js/commercial.js?v=20260728c"></script>
-  <script src="js/main.js?v=20260728c"></script>
+  <script src="js/i18n.js?v=20260728d"></script>
+  <script src="js/projects-media.js?v=20260728d"></script>
+  <script src="js/commercial.js?v=20260728d"></script>
+  <script src="js/spatial-trailers.js?v=20260728d"></script>
+  <script src="js/main.js?v=20260728d"></script>
 </body>
 </html>
