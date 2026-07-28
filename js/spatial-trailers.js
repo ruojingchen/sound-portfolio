@@ -4,7 +4,7 @@
  * Posters: replace assets/spatial/posters/{id}.svg with final art later.
  */
 window.CRJ_SPATIAL_TRAILERS = (() => {
-  const ASSET_VER = "20260728d";
+  const ASSET_VER = "20260728e";
   const withVer = (path) =>
     path.includes("?") ? `${path}&v=${ASSET_VER}` : `${path}?v=${ASSET_VER}`;
 
@@ -19,7 +19,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
     {
       id: "baima",
       duration: "2:01",
-      title: { zh: "白马", en: "White Horse" },
+      title: { zh: "白马与天涯", en: "Horse and Skyline" },
       meta: {
         zh: "Atmos 预告 · 网页立体声折混",
         en: "Atmos trailer · web stereo fold-down",
@@ -27,12 +27,12 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/baima.m4a",
       adm: "assets/spatial/trailers/baima-atmos-adm.mp4",
       admName: "白马_预告_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/baima.svg",
+      poster: "assets/spatial/posters/baima.jpg",
     },
     {
       id: "huxiaojiu",
       duration: "2:21",
-      title: { zh: "狐小九", en: "Fox Nine" },
+      title: { zh: "狐小九之江湖奇谭", en: "Fox Nine · Jianghu Tales" },
       meta: {
         zh: "Atmos 预告 · 网页立体声折混",
         en: "Atmos trailer · web stereo fold-down",
@@ -40,7 +40,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/huxiaojiu.m4a",
       adm: "assets/spatial/trailers/huxiaojiu-atmos-adm.mp4",
       admName: "狐小九_预告_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/huxiaojiu.svg",
+      poster: "assets/spatial/posters/huxiaojiu.jpg",
     },
     {
       id: "zootopia",
@@ -53,28 +53,28 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/zootopia.m4a",
       adm: "assets/spatial/trailers/zootopia-atmos-adm.mp4",
       admName: "疯狂动物城_预告_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/zootopia.svg",
+      poster: "assets/spatial/posters/zootopia.jpg",
     },
     {
       id: "mobile-court",
       duration: "2:51",
-      title: { zh: "移动法庭", en: "Mobile Court" },
+      title: { zh: "龙猫法官·白米拉", en: "Judge Baimila" },
       meta: {
-        zh: "Atmos 试听 · 网页立体声折混",
-        en: "Atmos sample · web stereo fold-down",
+        zh: "Atmos 试听 · 网页立体声折混（源文件：移动法庭）",
+        en: "Atmos sample · web stereo fold-down (source: Mobile Court)",
       },
       audio: "assets/spatial/trailers/mobile-court.m4a",
       adm: "assets/spatial/trailers/mobile-court-atmos-adm.mp4",
       admName: "移动法庭_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/mobile-court.svg",
+      poster: "assets/spatial/posters/mobile-court.jpg",
     },
     {
       id: "renshijian",
       duration: "7:08",
       title: { zh: "人世间", en: "A Lifetime" },
       meta: {
-        zh: "Atmos 试听 · 网页立体声折混",
-        en: "Atmos sample · web stereo fold-down",
+        zh: "Atmos 试听 · 网页立体声折混 · 海报待补",
+        en: "Atmos sample · web stereo fold-down · poster pending",
       },
       audio: "assets/spatial/trailers/renshijian.m4a",
       adm: "assets/spatial/trailers/renshijian-atmos-adm.mp4",
@@ -84,7 +84,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
     {
       id: "chongsheng",
       duration: "8:54",
-      title: { zh: "重生归来", en: "Reborn" },
+      title: { zh: "重生回来", en: "Reborn" },
       meta: {
         zh: "Atmos 试听 · 网页立体声折混",
         en: "Atmos sample · web stereo fold-down",
@@ -92,12 +92,12 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/chongsheng.m4a",
       adm: "assets/spatial/trailers/chongsheng-atmos-adm.mp4",
       admName: "重生归来_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/chongsheng.svg",
+      poster: "assets/spatial/posters/chongsheng.jpg",
     },
     {
       id: "qingrang",
       duration: "9:33",
-      title: { zh: "青壤", en: "Qingrang" },
+      title: { zh: "枭起青壤", en: "The Rise of Qingrang" },
       meta: {
         zh: "Atmos 试听 · 网页立体声折混",
         en: "Atmos sample · web stereo fold-down",
@@ -105,7 +105,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/qingrang.m4a",
       adm: "assets/spatial/trailers/qingrang-atmos-adm.mp4",
       admName: "青壤_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/qingrang.svg",
+      poster: "assets/spatial/posters/qingrang.jpg",
     },
     {
       id: "wandering-earth",
@@ -118,7 +118,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/wandering-earth.m4a",
       adm: "assets/spatial/trailers/wandering-earth-atmos-adm.mp4",
       admName: "流浪地球_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/wandering-earth.svg",
+      poster: "assets/spatial/posters/wandering-earth.jpg",
     },
     {
       id: "songci",
@@ -131,7 +131,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       audio: "assets/spatial/trailers/songci.m4a",
       adm: "assets/spatial/trailers/songci-atmos-adm.mp4",
       admName: "宋慈洗冤笔记_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/songci.svg",
+      poster: "assets/spatial/posters/songci.jpg",
     },
   ];
 
