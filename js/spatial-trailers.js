@@ -4,7 +4,7 @@
  * Posters: replace assets/spatial/posters/{id}.svg with final art later.
  */
 window.CRJ_SPATIAL_TRAILERS = (() => {
-  const ASSET_VER = "20260728e";
+  const ASSET_VER = "20260728f";
   const withVer = (path) =>
     path.includes("?") ? `${path}&v=${ASSET_VER}` : `${path}?v=${ASSET_VER}`;
 
@@ -60,8 +60,8 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       duration: "2:51",
       title: { zh: "龙猫法官·白米拉", en: "Judge Baimila" },
       meta: {
-        zh: "Atmos 试听 · 网页立体声折混（源文件：移动法庭）",
-        en: "Atmos sample · web stereo fold-down (source: Mobile Court)",
+        zh: "Atmos 试听 · 网页立体声折混",
+        en: "Atmos sample · web stereo fold-down",
       },
       audio: "assets/spatial/trailers/mobile-court.m4a",
       adm: "assets/spatial/trailers/mobile-court-atmos-adm.mp4",
@@ -73,13 +73,13 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       duration: "7:08",
       title: { zh: "人世间", en: "A Lifetime" },
       meta: {
-        zh: "Atmos 试听 · 网页立体声折混 · 海报待补",
-        en: "Atmos sample · web stereo fold-down · poster pending",
+        zh: "Atmos 试听 · 网页立体声折混",
+        en: "Atmos sample · web stereo fold-down",
       },
       audio: "assets/spatial/trailers/renshijian.m4a",
       adm: "assets/spatial/trailers/renshijian-atmos-adm.mp4",
       admName: "人世间_Atmos_ADM.mp4",
-      poster: "assets/spatial/posters/renshijian.svg",
+      poster: "assets/spatial/posters/renshijian.jpg",
     },
     {
       id: "chongsheng",
