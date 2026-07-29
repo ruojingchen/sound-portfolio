@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260728f" />
+  <link rel="stylesheet" href="css/styles.css?v=20260729a" />
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -187,9 +187,9 @@
   <div class="mobile-nav" id="mobileNav">
     <button type="button" class="mobile-nav__reenter" id="reenterGateMobile" data-i18n="nav.reenter">再次聆听</button>
     <a href="#work" data-i18n="nav.workMobile">作品</a>
+    <a href="#chapter-spatial" data-i18n="chapters.spatial">空间音频</a>
     <a href="#chapter-commercial" data-i18n="chapters.commercial">广告项目</a>
     <a href="#chapter-film" data-i18n="chapters.film">影视内容</a>
-    <a href="#chapter-spatial" data-i18n="chapters.spatial">空间音频</a>
     <a href="#chapter-interactive" data-i18n="chapters.interactive">交互装置</a>
     <a href="#chapter-live" data-i18n="chapters.live">现场综艺</a>
     <a href="#about" data-i18n="nav.aboutMobile">关于</a>
@@ -242,22 +242,22 @@
           <h2 class="section__title reveal" data-reveal data-i18n="work.title">作品档案</h2>
         </div>
         <p class="section__desc reveal" data-reveal data-i18n="work.desc">
-          五种档案，同一种聆听。广告与产线偏交付与标准；影视与游戏交互里，留下更多个人艺术判断。
+          五种档案，同一种聆听。空间与广告偏交付与标准；影视与游戏交互里，留下更多个人艺术判断。
         </p>
       </div>
 
       <nav class="chapter-index reveal" data-reveal aria-label="作品分区">
-        <a class="chapter-index__item" href="#chapter-commercial">
+        <a class="chapter-index__item" href="#chapter-spatial">
           <span class="chapter-index__num">01</span>
+          <span class="chapter-index__label" data-i18n="chapters.spatial">空间音频 · 全景声</span>
+        </a>
+        <a class="chapter-index__item" href="#chapter-commercial">
+          <span class="chapter-index__num">02</span>
           <span class="chapter-index__label" data-i18n="chapters.commercial">广告项目</span>
         </a>
         <a class="chapter-index__item" href="#chapter-film">
-          <span class="chapter-index__num">02</span>
-          <span class="chapter-index__label" data-i18n="chapters.film">影视内容</span>
-        </a>
-        <a class="chapter-index__item" href="#chapter-spatial">
           <span class="chapter-index__num">03</span>
-          <span class="chapter-index__label" data-i18n="chapters.spatial">空间音频 · 全景声</span>
+          <span class="chapter-index__label" data-i18n="chapters.film">影视内容</span>
         </a>
         <a class="chapter-index__item" href="#chapter-interactive">
           <span class="chapter-index__num">04</span>
@@ -269,10 +269,221 @@
         </a>
       </nav>
 
-      <!-- 01 Commercial -->
-      <article class="chapter" id="chapter-commercial" data-chapter="commercial">
+      <!-- 01 Spatial -->
+      <article class="chapter" id="chapter-spatial" data-chapter="spatial">
         <header class="chapter__head reveal" data-reveal>
           <p class="chapter__num">01</p>
+          <div>
+            <h3 class="chapter__title" data-i18n="chapters.spatial">空间音频 · 全景声</h3>
+            <p class="chapter__lead" data-i18n="spatial.lead">围绕喜马拉雅全景声有声剧产线：人工制作、AIGC 结构化交付、Agent Skill、多声道测评与分析。</p>
+          </div>
+        </header>
+
+        <div class="work-grid">
+          <article class="project reveal" data-reveal data-project="atmos-pipeline">
+            <button class="project__hit" type="button" data-i18n-aria="projects.atmos.aria" aria-label="查看：全景声产线">
+              <div class="project__visual">
+                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
+                <span class="project__index">01</span>
+              </div>
+              <div class="project__body">
+                <div class="project__tags"><span>Dolby Atmos</span><span>Audio Vivid</span><span>WANOS</span></div>
+                <h4 class="project__title" data-i18n="projects.atmos.title">全景声有声剧产线</h4>
+                <p class="project__role" data-i18n="projects.atmos.role">车联网空间音频制作负责人 · 喜马拉雅</p>
+                <p class="project__excerpt" data-i18n="projects.atmos.excerpt">人工预告 · AIGC JSON · Skill 能力卡 · 多声道测评与分析。</p>
+              </div>
+              <span class="project__arrow" aria-hidden="true">→</span>
+            </button>
+          </article>
+        </div>
+
+        <!-- A · 人工制作有声剧预告 -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">A</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockA.title">人工制作 · 有声剧预告</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockA.lead">扇形点选试听立体声折混；下载 E-AC-3 Atmos ADM 可在本地回放全景声多声道。海报可后续替换。</p>
+            </div>
+          </header>
+
+          <div class="spat-fan reveal" data-reveal id="spatFanStage">
+            <div class="spat-fan__hint">
+              <span data-i18n="spatial.blockA.fanHint">悬停海报滚轮翻页 · 点击锁定试听 · 空白处上下滚动</span>
+              <div class="spat-fan__nav">
+                <button type="button" class="fan-nav" id="spatFanPrev" aria-label="上一个">‹</button>
+                <button type="button" class="fan-nav" id="spatFanNext" aria-label="下一个">›</button>
+              </div>
+            </div>
+
+            <div class="spat-fan__deck-wrap">
+              <div class="spat-fan__deck" id="spatFanDeck" aria-live="polite"></div>
+            </div>
+
+            <div class="spat-fan__now" id="spatFanNow">
+              <p class="spat-fan__dur" id="spatFanDur">2:01</p>
+              <h4 class="spat-fan__title" id="spatFanTitle">白马</h4>
+              <p class="spat-fan__meta" id="spatFanMeta">Atmos 预告 · 网页立体声折混</p>
+              <audio class="spat-fan__audio" id="spatFanAudio" controls preload="metadata" playsinline></audio>
+              <div class="spat-fan__actions">
+                <button type="button" class="btn btn--primary" id="spatFanPlay">
+                  <span data-i18n="spatial.blockA.play">播放试听</span>
+                </button>
+                <a class="spatial-audio__dl spat-fan__dl" id="spatFanDl" href="#" download data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
+              </div>
+            </div>
+
+            <div class="spat-fan__dots" id="spatFanDots"></div>
+          </div>
+        </section>
+
+        <!-- B · AIGC JSON -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">B</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockB.title">AIGC 制作 · JSON 结构化交付</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockB.lead">你负责撰写 / 校对的剧集 JSON：可放脱敏截图或删掉剧名、ID 后的片段。</p>
+            </div>
+          </header>
+          <div class="spatial-fill spatial-fill--shots">
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot1">JSON 截图 01 · 场景 / 对象结构</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot2">JSON 截图 02 · 空间 / 路由字段</p>
+            </div>
+            <div class="spatial-slot spatial-slot--shot">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+              <p data-i18n="spatial.blockB.slot3">JSON 截图 03 · 质检相关字段</p>
+            </div>
+            <div class="spatial-slot spatial-slot--note">
+              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">说明</span>
+              <p data-i18n="spatial.blockB.note">建议：打码剧名与内部 ID；保留字段命名与层级，体现你对产线 schema 的理解。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- C · Skills（展示用 · 不可复用） -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">C</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockC.title">Agent Skill · 工作流能力卡</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockC.lead">产线自用的 Cursor Skill，已备份至个人 GitHub。环境与路径绑死，无法对外复用——此处只做能力呈现：解决什么 → 怎么走 → 产出什么。</p>
+            </div>
+          </header>
+          <div class="spatial-fill spatial-fill--skills">
+            <article class="spatial-skill">
+              <p class="spatial-skill__eye" data-i18n="spatial.blockC.card1.eye">Skill · ASR 质检</p>
+              <h5 class="spatial-skill__title" data-i18n="spatial.blockC.card1.title">Whisper 片头集数校验</h5>
+              <p class="spatial-skill__body" data-i18n="spatial.blockC.card1.body">批量听片头「第 X 集」口播，对照文件名集数，揪出命名报错；可选声音克隆生成正确口播。</p>
+              <ol class="spatial-skill__flow" data-i18n-html="spatial.blockC.card1.flow">
+                <li>输入音视频</li>
+                <li>截取片头 · ASR</li>
+                <li>比对集数 · 报告</li>
+              </ol>
+              <a
+                class="spatial-skill__link"
+                href="https://github.com/ruojingchen/whisper-episode-check"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="spatial.blockC.viewRepo"
+              >GitHub 备份</a>
+            </article>
+
+            <article class="spatial-skill">
+              <p class="spatial-skill__eye" data-i18n="spatial.blockC.card2.eye">Skill · 日更制作</p>
+              <h5 class="spatial-skill__title" data-i18n="spatial.blockC.card2.title">AIGC 全景声剧集制作管线</h5>
+              <p class="spatial-skill__body" data-i18n="spatial.blockC.card2.body">供应商分轨扫描与日更建夹，按剧目类型跑 HiSound / 外包 ADM 拷贝，交付至 DailyCheckin 并回写进度与质检报告。</p>
+              <ol class="spatial-skill__flow" data-i18n-html="spatial.blockC.card2.flow">
+                <li>扫描分轨 · 建制作夹</li>
+                <li>类型分流制作</li>
+                <li>交付 · 台账 · 质检</li>
+              </ol>
+              <a
+                class="spatial-skill__link"
+                href="https://github.com/ruojingchen/aigc-spatial-drama-pipeline"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="spatial.blockC.viewRepo"
+              >GitHub 备份</a>
+            </article>
+
+            <p class="spatial-skill__note" data-i18n="spatial.blockC.note">
+              源码含内网路径与产线约定，网页不展开命令与目录；GitHub 仅作备份存档，不作为可安装模板。
+            </p>
+          </div>
+        </section>
+
+        <!-- D · 多声道测评与分析（主观 + 能量） -->
+        <section class="spatial-block reveal" data-reveal>
+          <header class="spatial-block__head">
+            <p class="spatial-block__num">D</p>
+            <div>
+              <h4 class="spatial-block__title" data-i18n="spatial.blockD.title">多声道测评与分析</h4>
+              <p class="spatial-block__lead" data-i18n="spatial.blockD.lead">主观听测与客观能量分析并置——面向全景声多声道品质评估：听感量表与响度 / 频段 / bed–object 能量报告。</p>
+            </div>
+          </header>
+
+          <div class="spatial-measure">
+            <div class="spatial-measure__group">
+              <p class="spatial-measure__label" data-i18n="spatial.blockD.subSubjective">主观测评</p>
+              <div class="spatial-fill">
+                <div class="spatial-slot spatial-slot--doc">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">文档位</span>
+                  <p data-i18n="spatial.blockD.slot1">测评方案 PDF / 封面 + 目录页</p>
+                </div>
+                <div class="spatial-slot spatial-slot--shot">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+                  <p data-i18n="spatial.blockD.slot2">量表维度表 · 定位 / 包围 / 清晰度等</p>
+                </div>
+                <div class="spatial-slot spatial-slot--shot">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
+                  <p data-i18n="spatial.blockD.slot3">结果摘要图 · 可打码样本名</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="spatial-measure__group">
+              <p class="spatial-measure__label" data-i18n="spatial.blockD.subEnergy">音频能量分析</p>
+              <div class="spatial-fill">
+                <div class="spatial-slot spatial-slot--doc">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">报告位</span>
+                  <p data-i18n="spatial.blockD.slot4">能量分析报告 · 封面</p>
+                </div>
+                <div class="spatial-slot spatial-slot--shot">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
+                  <p data-i18n="spatial.blockD.slot5">关键图表 01 · 如短时能量 / LUFS</p>
+                </div>
+                <div class="spatial-slot spatial-slot--shot">
+                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
+                  <p data-i18n="spatial.blockD.slot6">关键图表 02 · 如频段 / 通道对比</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="module-row reveal" data-reveal>
+          <div class="module module--archive module--archive-full">
+            <p class="module__eyebrow" data-i18n="module.archive">工作现场</p>
+            <h4 class="module__title" data-i18n="spatial.archiveTitle">听音室 / 产线现场</h4>
+            <div class="archive-grid">
+              <div class="archive-slot" data-i18n="slot.photo">放置听音室照片</div>
+              <div class="archive-slot" data-i18n="slot.diagram">放置阵列示意 / 流程图</div>
+              <div class="archive-slot archive-slot--wide" data-i18n="slot.report">放置测评 / 报告现场照</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+<!-- 02 Commercial -->
+      <article class="chapter" id="chapter-commercial" data-chapter="commercial">
+        <header class="chapter__head reveal" data-reveal>
+          <p class="chapter__num">02</p>
           <div>
             <h3 class="chapter__title" data-i18n="chapters.commercial">广告项目</h3>
             <p class="chapter__lead" data-i18n="commercial.lead">按片型区分 TVC、宣传片与竖屏平台投放；汽车精选单独主推，扇区左右开合翻阅。</p>
@@ -391,10 +602,10 @@
         </div>
       </article>
 
-      <!-- 02 Film -->
+<!-- 03 Film -->
       <article class="chapter" id="chapter-film" data-chapter="film">
         <header class="chapter__head reveal" data-reveal>
-          <p class="chapter__num">02</p>
+          <p class="chapter__num">03</p>
           <div>
             <h3 class="chapter__title" data-i18n="chapters.film">影视内容</h3>
             <p class="chapter__lead" data-i18n="film.lead">影像里的私人声场——从同期到环绕后期，把叙事骨架交还给声音。</p>
@@ -500,199 +711,7 @@
         </div>
       </article>
 
-      <!-- 03 Spatial -->
-      <article class="chapter" id="chapter-spatial" data-chapter="spatial">
-        <header class="chapter__head reveal" data-reveal>
-          <p class="chapter__num">03</p>
-          <div>
-            <h3 class="chapter__title" data-i18n="chapters.spatial">空间音频 · 全景声</h3>
-            <p class="chapter__lead" data-i18n="spatial.lead">围绕喜马拉雅全景声有声剧产线：人工制作、AIGC 结构化交付、Agent Skill、主观测评与能量分析。</p>
-          </div>
-        </header>
-
-        <div class="work-grid">
-          <article class="project reveal" data-reveal data-project="atmos-pipeline">
-            <button class="project__hit" type="button" data-i18n-aria="projects.atmos.aria" aria-label="查看：全景声产线">
-              <div class="project__visual">
-                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
-                <span class="project__index">01</span>
-              </div>
-              <div class="project__body">
-                <div class="project__tags"><span>Dolby Atmos</span><span>Audio Vivid</span><span>WANOS</span></div>
-                <h4 class="project__title" data-i18n="projects.atmos.title">全景声有声剧产线</h4>
-                <p class="project__role" data-i18n="projects.atmos.role">车联网空间音频制作负责人 · 喜马拉雅</p>
-                <p class="project__excerpt" data-i18n="projects.atmos.excerpt">人工预告 · AIGC JSON · Skill 能力卡 · 主观测评 · 能量分析——下方分区填补。</p>
-              </div>
-              <span class="project__arrow" aria-hidden="true">→</span>
-            </button>
-          </article>
-        </div>
-
-        <!-- A · 人工制作有声剧预告 -->
-        <section class="spatial-block reveal" data-reveal>
-          <header class="spatial-block__head">
-            <p class="spatial-block__num">A</p>
-            <div>
-              <h4 class="spatial-block__title" data-i18n="spatial.blockA.title">人工制作 · 有声剧预告</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockA.lead">扇形点选试听立体声折混；下载 E-AC-3 Atmos ADM 可在本地回放全景声多声道。海报可后续替换。</p>
-            </div>
-          </header>
-
-          <div class="spat-fan reveal" data-reveal id="spatFanStage">
-            <div class="spat-fan__hint">
-              <span data-i18n="spatial.blockA.fanHint">在扇区左右移动开合 · 点击封面播放</span>
-              <div class="spat-fan__nav">
-                <button type="button" class="fan-nav" id="spatFanPrev" aria-label="上一个">‹</button>
-                <button type="button" class="fan-nav" id="spatFanNext" aria-label="下一个">›</button>
-              </div>
-            </div>
-
-            <div class="spat-fan__deck-wrap">
-              <div class="spat-fan__deck" id="spatFanDeck" aria-live="polite"></div>
-            </div>
-
-            <div class="spat-fan__now" id="spatFanNow">
-              <p class="spat-fan__dur" id="spatFanDur">2:01</p>
-              <h4 class="spat-fan__title" id="spatFanTitle">白马</h4>
-              <p class="spat-fan__meta" id="spatFanMeta">Atmos 预告 · 网页立体声折混</p>
-              <audio class="spat-fan__audio" id="spatFanAudio" controls preload="metadata" playsinline></audio>
-              <div class="spat-fan__actions">
-                <button type="button" class="btn btn--primary" id="spatFanPlay">
-                  <span data-i18n="spatial.blockA.play">播放试听</span>
-                </button>
-                <a class="spatial-audio__dl spat-fan__dl" id="spatFanDl" href="#" download data-i18n="spatial.blockA.download">下载 Atmos ADM（E-AC-3 · 多声道）</a>
-              </div>
-            </div>
-
-            <div class="spat-fan__dots" id="spatFanDots"></div>
-          </div>
-        </section>
-
-        <!-- B · AIGC JSON -->
-        <section class="spatial-block reveal" data-reveal>
-          <header class="spatial-block__head">
-            <p class="spatial-block__num">B</p>
-            <div>
-              <h4 class="spatial-block__title" data-i18n="spatial.blockB.title">AIGC 制作 · JSON 结构化交付</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockB.lead">你负责撰写 / 校对的剧集 JSON：可放脱敏截图或删掉剧名、ID 后的片段。</p>
-            </div>
-          </header>
-          <div class="spatial-fill spatial-fill--shots">
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot1">JSON 截图 01 · 场景 / 对象结构</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot2">JSON 截图 02 · 空间 / 路由字段</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot3">JSON 截图 03 · 质检相关字段</p>
-            </div>
-            <div class="spatial-slot spatial-slot--note">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">说明</span>
-              <p data-i18n="spatial.blockB.note">建议：打码剧名与内部 ID；保留字段命名与层级，体现你对产线 schema 的理解。</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- C · Skills（脱敏） -->
-        <section class="spatial-block reveal" data-reveal>
-          <header class="spatial-block__head">
-            <p class="spatial-block__num">C</p>
-            <div>
-              <h4 class="spatial-block__title" data-i18n="spatial.blockC.title">Agent Skill · 能力卡（脱敏）</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockC.lead">公司帐号 Skill 不便外发源文件。用「输入 → 动作 → 输出 / 指标」能力卡呈现即可，不贴代码与内部路径。</p>
-            </div>
-          </header>
-          <div class="spatial-fill spatial-fill--cards">
-            <article class="spatial-card">
-              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card1.eye">Skill 01</p>
-              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card1.title">分轨 / 版本一致性扫描</h5>
-              <p class="spatial-card__body" data-i18n="spatial.blockC.card1.body">填写：触发条件、检查项、失败时如何提示交付。</p>
-            </article>
-            <article class="spatial-card">
-              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card2.eye">Skill 02</p>
-              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card2.title">转码 / 规格校验助手</h5>
-              <p class="spatial-card__body" data-i18n="spatial.blockC.card2.body">填写：对接格式（Atmos / Audio Vivid / WANOS）、自动核对项。</p>
-            </article>
-            <article class="spatial-card">
-              <p class="spatial-card__eyebrow" data-i18n="spatial.blockC.card3.eye">Skill 03</p>
-              <h5 class="spatial-card__title" data-i18n="spatial.blockC.card3.title">（自定义名称）</h5>
-              <p class="spatial-card__body" data-i18n="spatial.blockC.card3.body">填写：解决的产线痛点 + 上线后节省的人工步骤。</p>
-            </article>
-            <div class="spatial-slot spatial-slot--note spatial-slot--wide">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">呈现建议</span>
-              <p data-i18n="spatial.blockC.note">可再加一张「工作流示意」图（手绘 / FigJam 导出）：人工节点与 Agent 节点并列，不出现公司内网地址。</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- D · 主观测评 -->
-        <section class="spatial-block reveal" data-reveal>
-          <header class="spatial-block__head">
-            <p class="spatial-block__num">D</p>
-            <div>
-              <h4 class="spatial-block__title" data-i18n="spatial.blockD.title">主观测评 · 方案设计</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockD.lead">双盲 / 半盲听测框架、量表维度、样本选取与听音环境——比结论截图更能体现方法论。</p>
-            </div>
-          </header>
-          <div class="spatial-fill">
-            <div class="spatial-slot spatial-slot--doc">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">文档位</span>
-              <p data-i18n="spatial.blockD.slot1">测评方案 PDF / 封面 + 目录页</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockD.slot2">量表维度表 · 定位 / 包围 / 清晰度等</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockD.slot3">结果摘要图 · 可打码样本名</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- E · 能量分析 -->
-        <section class="spatial-block reveal" data-reveal>
-          <header class="spatial-block__head">
-            <p class="spatial-block__num">E</p>
-            <div>
-              <h4 class="spatial-block__title" data-i18n="spatial.blockE.title">音频能量分析报告</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockE.lead">响度 / 频段能量 / bed–object 能量分布等客观报告封面与关键页。</p>
-            </div>
-          </header>
-          <div class="spatial-fill">
-            <div class="spatial-slot spatial-slot--doc">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">报告位</span>
-              <p data-i18n="spatial.blockE.slot1">能量分析报告 · 封面</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
-              <p data-i18n="spatial.blockE.slot2">关键图表 01 · 如短时能量 / LUFS</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
-              <p data-i18n="spatial.blockE.slot3">关键图表 02 · 如频段 / 通道对比</p>
-            </div>
-          </div>
-        </section>
-
-        <div class="module-row reveal" data-reveal>
-          <div class="module module--archive module--archive-full">
-            <p class="module__eyebrow" data-i18n="module.archive">工作现场</p>
-            <h4 class="module__title" data-i18n="spatial.archiveTitle">听音室 / 产线现场</h4>
-            <div class="archive-grid">
-              <div class="archive-slot" data-i18n="slot.photo">放置听音室照片</div>
-              <div class="archive-slot" data-i18n="slot.diagram">放置阵列示意 / 流程图</div>
-              <div class="archive-slot archive-slot--wide" data-i18n="slot.report">放置测评 / 报告现场照</div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 04 Interactive -->
+<!-- 04 Interactive -->
       <article class="chapter" id="chapter-interactive" data-chapter="interactive">
         <header class="chapter__head reveal" data-reveal>
           <p class="chapter__num">04</p>
@@ -753,7 +772,7 @@
         </div>
       </article>
 
-      <!-- 05 Live & Variety -->
+<!-- 05 Live & Variety -->
       <article class="chapter" id="chapter-live" data-chapter="live">
         <header class="chapter__head reveal" data-reveal>
           <p class="chapter__num">05</p>
@@ -816,6 +835,8 @@
     </section>
 
     <!-- About -->
+
+
     <section class="section about" id="about">
       <div class="about__grid">
         <div class="about__text">
@@ -911,10 +932,10 @@
     <img id="pageLightboxImg" alt="" />
   </div>
 
-  <script src="js/i18n.js?v=20260728f"></script>
-  <script src="js/projects-media.js?v=20260728f"></script>
-  <script src="js/commercial.js?v=20260728f"></script>
-  <script src="js/spatial-trailers.js?v=20260728f"></script>
-  <script src="js/main.js?v=20260728f"></script>
+  <script src="js/i18n.js?v=20260729a"></script>
+  <script src="js/projects-media.js?v=20260729a"></script>
+  <script src="js/commercial.js?v=20260729a"></script>
+  <script src="js/spatial-trailers.js?v=20260729a"></script>
+  <script src="js/main.js?v=20260729a"></script>
 </body>
 </html>

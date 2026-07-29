@@ -1436,14 +1436,37 @@ body[data-lang="en"] .hero__title-sub {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .spatial-fill--skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .spatial-slot--wide,
-  .spatial-slot--note.spatial-slot--wide {
+  .spatial-slot--note.spatial-slot--wide,
+  .spatial-skill__note {
     grid-column: 1 / -1;
   }
 }
 
 .spatial-fill--audio {
   gap: 1rem;
+}
+
+.spatial-measure {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.spatial-measure__group {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.spatial-measure__label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--signal);
 }
 
 .spatial-audio {
@@ -1533,6 +1556,8 @@ body[data-lang="en"] .hero__title-sub {
   height: 380px;
   margin: 0.5rem 0 1.25rem;
   overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
 }
 
 .spat-fan__deck {
@@ -1556,6 +1581,7 @@ body[data-lang="en"] .hero__title-sub {
   transform-origin: 50% 90%;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  -webkit-user-drag: none;
 }
 
 .spat-fan-card img {
@@ -1752,6 +1778,82 @@ body[data-lang="en"] .hero__title-sub {
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--muted, rgba(255, 255, 255, 0.62));
+}
+
+.spatial-skill {
+  margin: 0;
+  padding: 1.15rem 1.1rem 1.2rem;
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+}
+
+.spatial-skill__eye {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--signal);
+}
+
+.spatial-skill__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 560;
+  letter-spacing: 0.02em;
+}
+
+.spatial-skill__body {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted, rgba(255, 255, 255, 0.62));
+}
+
+.spatial-skill__flow {
+  margin: 0 0 0.95rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+}
+
+.spatial-skill__flow li {
+  position: relative;
+  padding-right: 1.1rem;
+}
+
+.spatial-skill__flow li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  color: var(--signal);
+  opacity: 0.7;
+}
+
+.spatial-skill__link {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 560;
+  letter-spacing: 0.06em;
+  color: var(--signal);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.spatial-skill__link:hover {
+  border-bottom-color: var(--signal);
+}
+
+.spatial-skill__note {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-faint, rgba(255, 255, 255, 0.45));
 }
 
 .page-lightbox {

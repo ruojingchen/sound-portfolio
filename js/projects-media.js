@@ -854,7 +854,7 @@ window.CRJ_PROJECT_MEDIA = {
         title: { zh: "Demo 1 · 演示", en: "Demo 1 · Playthrough" },
         src: "assets/game/soundscape/demo-1-play.mp4",
         build: {
-          href: "assets/game/soundscape/demo-1-build.zip",
+          href: "https://github.com/ruojingchen/sound-portfolio/releases/download/game-demos-v1/demo-1-build.zip",
           label: {
             zh: "下载试玩 · crj_gameEngineWorldBuild",
             en: "Download playable · crj_gameEngineWorldBuild",
@@ -870,7 +870,7 @@ window.CRJ_PROJECT_MEDIA = {
         title: { zh: "Demo 2 · 演示", en: "Demo 2 · Playthrough" },
         src: "assets/game/soundscape/demo-2-play.mp4",
         build: {
-          href: "assets/game/soundscape/demo-2-build.zip",
+          href: "https://github.com/ruojingchen/sound-portfolio/releases/download/game-demos-v1/demo-2-build.zip",
           label: {
             zh: "下载试玩 · CRJ_FinalProjectGameEngineWorldBuild",
             en: "Download playable · CRJ_FinalProjectGameEngineWorldBuild",

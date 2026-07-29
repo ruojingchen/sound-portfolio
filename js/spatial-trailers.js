@@ -4,7 +4,7 @@
  * Posters: replace assets/spatial/posters/{id}.svg with final art later.
  */
 window.CRJ_SPATIAL_TRAILERS = (() => {
-  const ASSET_VER = "20260728f";
+  const ASSET_VER = "20260728k";
   const withVer = (path) =>
     path.includes("?") ? `${path}&v=${ASSET_VER}` : `${path}?v=${ASSET_VER}`;
 
@@ -149,13 +149,23 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
 
   if (!stage || !deck) return { TRAILERS };
 
+  const deckWrap = deck.closest(".spat-fan__deck-wrap") || deck.parentElement;
+
   let cards = [];
   let cursor = 0;
   let target = 0;
-  let lastSynced = -1;
+  let lastMeta = -1;
+  let lastAudio = -1;
+  let wheelAcc = 0;
+  // After a cover click, stay locked on that index until explicit nav
+  let locked = false;
+
+  function clampIndex(v) {
+    return Math.max(0, Math.min(TRAILERS.length - 1, v));
+  }
 
   function activeIndex() {
-    return Math.round(Math.max(0, Math.min(TRAILERS.length - 1, cursor)));
+    return Math.round(clampIndex(cursor));
   }
 
   function build() {
@@ -167,13 +177,17 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       btn.dataset.index = String(i);
       btn.setAttribute("aria-label", label(t.title));
       btn.innerHTML = `
-        <img src="${withVer(t.poster)}" alt="" loading="lazy" />
+        <img src="${withVer(t.poster)}" alt="" loading="lazy" draggable="false" />
         <span class="spat-fan-card__veil"></span>
         <span class="spat-fan-card__dur">${t.duration}</span>
         <span class="spat-fan-card__title">${label(t.title)}</span>
         <span class="spat-fan-card__play" aria-hidden="true">▶</span>
       `;
-      btn.addEventListener("click", () => selectAndPlay(i));
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        lockTo(i, true);
+      });
       deck.appendChild(btn);
       return btn;
     });
@@ -187,9 +201,7 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       ).join("");
       dotsEl.querySelectorAll("[data-index]").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const i = Number(btn.dataset.index);
-          setTarget(i);
-          syncNow(i, false);
+          lockTo(Number(btn.dataset.index), false);
         });
       });
     }
@@ -215,14 +227,15 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
       card.style.zIndex = String(z);
       card.style.opacity = String(opacity);
       card.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${rot}deg) scale(${scale})`;
-      card.style.pointerEvents = isFront || abs < 1.15 ? "auto" : "none";
+      card.style.pointerEvents = isFront || abs < 2.35 ? "auto" : "none";
     });
+    stage?.classList.toggle("is-locked", locked);
   }
 
-  function syncNow(i = activeIndex(), loadAudio = true) {
+  function syncMeta(i = activeIndex()) {
     const t = TRAILERS[i];
-    if (!t) return;
-    lastSynced = i;
+    if (!t || i === lastMeta) return;
+    lastMeta = i;
     if (durEl) durEl.textContent = t.duration;
     if (titleEl) titleEl.textContent = label(t.title);
     if (metaEl) metaEl.textContent = label(t.meta);
@@ -233,38 +246,66 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
     dotsEl?.querySelectorAll(".spat-fan__dot").forEach((d, idx) => {
       d.classList.toggle("is-active", idx === i);
     });
-    if (loadAudio && audioEl) {
-      const src = withVer(t.audio);
-      if (audioEl.getAttribute("src") !== src) {
-        audioEl.src = src;
-      }
+  }
+
+  function syncAudio(i = activeIndex()) {
+    const t = TRAILERS[i];
+    if (!t || !audioEl) return;
+    lastAudio = i;
+    const src = withVer(t.audio);
+    if (audioEl.getAttribute("src") !== src) {
+      audioEl.src = src;
     }
   }
 
-  function selectAndPlay(i) {
-    setTarget(i);
-    syncNow(i, true);
-    audioEl?.play().catch(() => {});
+  function syncNow(i = activeIndex(), loadAudio = true) {
+    syncMeta(i);
+    if (loadAudio) syncAudio(i);
+  }
+
+  /** Snap + pin fan/audio to one cover. Click play=true. */
+  function lockTo(index, play = false) {
+    const idx = clampIndex(index);
+    locked = true;
+    target = idx;
+    cursor = idx;
+    syncNow(idx, true);
+    layoutFan();
+    if (play) audioEl?.play().catch(() => {});
+  }
+
+  function stepTo(index, play = false) {
+    lockTo(index, play);
   }
 
   function setTarget(index) {
     if (!Number.isFinite(index)) return;
-    target = Math.max(0, Math.min(TRAILERS.length - 1, index));
+    // Explicit nav unlocks then moves
+    locked = false;
+    target = clampIndex(index);
   }
 
   function tick() {
-    cursor += (target - cursor) * 0.14;
+    cursor += (target - cursor) * 0.18;
     if (Math.abs(target - cursor) < 0.002) cursor = target;
     layoutFan();
-    const i = activeIndex();
-    if (i !== lastSynced) syncNow(i, true);
+    syncMeta(activeIndex());
     requestAnimationFrame(tick);
   }
 
-  function mapPointerToIndex(clientX) {
-    const rect = deck.getBoundingClientRect();
-    const x = Math.min(1, Math.max(0, (clientX - rect.left) / Math.max(1, rect.width)));
-    return Math.round(x * (TRAILERS.length - 1));
+  function onWheel(e) {
+    if (!TRAILERS.length) return;
+    // Only scrub when pointer is over a poster — black margins keep page scroll
+    if (!e.target.closest(".spat-fan-card")) return;
+    const delta =
+      Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 1) return;
+    e.preventDefault();
+    wheelAcc += delta;
+    if (Math.abs(wheelAcc) < 36) return;
+    const step = wheelAcc > 0 ? 1 : -1;
+    wheelAcc = 0;
+    lockTo(activeIndex() + step, false);
   }
 
   build();
@@ -272,30 +313,41 @@ window.CRJ_SPATIAL_TRAILERS = (() => {
   requestAnimationFrame(tick);
 
   prevBtn?.addEventListener("click", () => {
-    const i = Math.max(0, activeIndex() - 1);
-    setTarget(i);
-    syncNow(i, true);
+    lockTo(activeIndex() - 1, false);
   });
   nextBtn?.addEventListener("click", () => {
-    const i = Math.min(TRAILERS.length - 1, activeIndex() + 1);
-    setTarget(i);
-    syncNow(i, true);
+    lockTo(activeIndex() + 1, false);
   });
-  playBtn?.addEventListener("click", () => selectAndPlay(activeIndex()));
+  playBtn?.addEventListener("click", () => lockTo(activeIndex(), true));
 
-  deck.addEventListener("pointermove", (e) => {
-    setTarget(mapPointerToIndex(e.clientX));
-  });
-  deck.addEventListener("pointerleave", () => {
-    setTarget(activeIndex());
+  const scrubRoot = deckWrap || deck;
+  scrubRoot.addEventListener("wheel", onWheel, { passive: false });
+
+  document.addEventListener("keydown", (e) => {
+    if (!stage) return;
+    const rect = stage.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
+    if (!inView) return;
+    if (e.target.closest("input, textarea, select, audio")) return;
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      lockTo(activeIndex() - 1, false);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      lockTo(activeIndex() + 1, false);
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      lockTo(activeIndex(), true);
+    }
   });
 
   window.addEventListener("crj:langchange", () => {
     const i = activeIndex();
+    lastMeta = -1;
     build();
     syncNow(i, false);
     layoutFan();
   });
 
-  return { TRAILERS, setTarget, selectAndPlay };
+  return { TRAILERS, setTarget, selectAndPlay: (i) => lockTo(i, true), lockTo };
 })();
