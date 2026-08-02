@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260729a" />
+  <link rel="stylesheet" href="css/styles.css?v=20260802o" />
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -279,24 +279,6 @@
           </div>
         </header>
 
-        <div class="work-grid">
-          <article class="project reveal" data-reveal data-project="atmos-pipeline">
-            <button class="project__hit" type="button" data-i18n-aria="projects.atmos.aria" aria-label="查看：全景声产线">
-              <div class="project__visual">
-                <div class="project__wave" aria-hidden="true"><canvas class="wave-canvas" width="400" height="120"></canvas></div>
-                <span class="project__index">01</span>
-              </div>
-              <div class="project__body">
-                <div class="project__tags"><span>Dolby Atmos</span><span>Audio Vivid</span><span>WANOS</span></div>
-                <h4 class="project__title" data-i18n="projects.atmos.title">全景声有声剧产线</h4>
-                <p class="project__role" data-i18n="projects.atmos.role">车联网空间音频制作负责人 · 喜马拉雅</p>
-                <p class="project__excerpt" data-i18n="projects.atmos.excerpt">人工预告 · AIGC JSON · Skill 能力卡 · 多声道测评与分析。</p>
-              </div>
-              <span class="project__arrow" aria-hidden="true">→</span>
-            </button>
-          </article>
-        </div>
-
         <!-- A · 人工制作有声剧预告 -->
         <section class="spatial-block reveal" data-reveal>
           <header class="spatial-block__head">
@@ -338,36 +320,66 @@
         </section>
 
         <!-- B · AIGC JSON -->
-        <section class="spatial-block reveal" data-reveal>
+        <section class="spatial-block spatial-block--fold reveal" data-reveal data-spatial-block-fold>
           <header class="spatial-block__head">
             <p class="spatial-block__num">B</p>
             <div>
               <h4 class="spatial-block__title" data-i18n="spatial.blockB.title">AIGC 制作 · JSON 结构化交付</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockB.lead">你负责撰写 / 校对的剧集 JSON：可放脱敏截图或删掉剧名、ID 后的片段。</p>
+              <p class="spatial-block__lead" data-i18n="spatial.blockB.lead">产线剧集空间音频路由配置：按 source_type 定义方位、高度、开角、距离与 LFE 等字段。环境与路径绑死，无法对外复用——此处只做能力呈现。</p>
             </div>
           </header>
-          <div class="spatial-fill spatial-fill--shots">
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot1">JSON 截图 01 · 场景 / 对象结构</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot2">JSON 截图 02 · 空间 / 路由字段</p>
-            </div>
-            <div class="spatial-slot spatial-slot--shot">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-              <p data-i18n="spatial.blockB.slot3">JSON 截图 03 · 质检相关字段</p>
-            </div>
-            <div class="spatial-slot spatial-slot--note">
-              <span class="spatial-slot__tag" data-i18n="spatial.slot.note">说明</span>
-              <p data-i18n="spatial.blockB.note">建议：打码剧名与内部 ID；保留字段命名与层级，体现你对产线 schema 的理解。</p>
-            </div>
+          <button type="button" class="spatial-block__toggle" data-spatial-block-toggle aria-expanded="false">
+            <span data-fold-label data-i18n="spatial.blockExpand">展开内容</span>
+            <span class="spatial-block__toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="spatial-block__panel" data-spatial-block-panel hidden>
+          <div class="spatial-json-grid" id="spatialJsonGrid">
+            <article class="spatial-json" data-json-src="assets/spatial/json/invincible-destiny.json">
+              <header class="spatial-json__head">
+                <div>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <h5 class="spatial-json__title" data-i18n="spatial.blockB.j1.title">无敌天命</h5>
+                  <p class="spatial-json__file">Invincible destiny_0123_Edit_1.json</p>
+                </div>
+                <div class="spatial-json__actions">
+                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
+                </div>
+              </header>
+              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+            </article>
+            <article class="spatial-json" data-json-src="assets/spatial/json/reborn.json">
+              <header class="spatial-json__head">
+                <div>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <h5 class="spatial-json__title" data-i18n="spatial.blockB.j2.title">重生回来</h5>
+                  <p class="spatial-json__file">Reborn_1105_Edit_1.json</p>
+                </div>
+                <div class="spatial-json__actions">
+                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
+                </div>
+              </header>
+              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+            </article>
+            <article class="spatial-json" data-json-src="assets/spatial/json/fengjiang.json">
+              <header class="spatial-json__head">
+                <div>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <h5 class="spatial-json__title" data-i18n="spatial.blockB.j3.title">封疆</h5>
+                  <p class="spatial-json__file">fengjiang_0316.json</p>
+                </div>
+                <div class="spatial-json__actions">
+                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
+                </div>
+              </header>
+              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+            </article>
+          </div>
+          <p class="spatial-json-note" data-i18n="spatial.blockB.note">展示字段层级与命名；配置绑定内部产线，不可下载或复用。</p>
           </div>
         </section>
 
         <!-- C · Skills（展示用 · 不可复用） -->
-        <section class="spatial-block reveal" data-reveal>
+        <section class="spatial-block spatial-block--fold reveal" data-reveal data-spatial-block-fold>
           <header class="spatial-block__head">
             <p class="spatial-block__num">C</p>
             <div>
@@ -375,6 +387,11 @@
               <p class="spatial-block__lead" data-i18n="spatial.blockC.lead">产线自用的 Cursor Skill，已备份至个人 GitHub。环境与路径绑死，无法对外复用——此处只做能力呈现：解决什么 → 怎么走 → 产出什么。</p>
             </div>
           </header>
+          <button type="button" class="spatial-block__toggle" data-spatial-block-toggle aria-expanded="false">
+            <span data-fold-label data-i18n="spatial.blockExpand">展开内容</span>
+            <span class="spatial-block__toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="spatial-block__panel" data-spatial-block-panel hidden>
           <div class="spatial-fill spatial-fill--skills">
             <article class="spatial-skill">
               <p class="spatial-skill__eye" data-i18n="spatial.blockC.card1.eye">Skill · ASR 质检</p>
@@ -416,68 +433,144 @@
               源码含内网路径与产线约定，网页不展开命令与目录；GitHub 仅作备份存档，不作为可安装模板。
             </p>
           </div>
+          </div>
         </section>
 
-        <!-- D · 多声道测评与分析（主观 + 能量） -->
-        <section class="spatial-block reveal" data-reveal>
+        <!-- D · 多声道测评与分析 · 两大项目 -->
+        <section class="spatial-block spatial-block--fold reveal" data-reveal data-spatial-block-fold>
           <header class="spatial-block__head">
             <p class="spatial-block__num">D</p>
             <div>
               <h4 class="spatial-block__title" data-i18n="spatial.blockD.title">多声道测评与分析</h4>
-              <p class="spatial-block__lead" data-i18n="spatial.blockD.lead">主观听测与客观能量分析并置——面向全景声多声道品质评估：听感量表与响度 / 频段 / bed–object 能量报告。</p>
+              <p class="spatial-block__lead" data-i18n="spatial.blockD.lead">两个独立项目：自研 / 杜比体积渲染器对照（客观能量 + 主观听测）；以及《三体》S1E04 片段 7.1.2 / 7.1.4 能量对比与假声源问题梳理。</p>
             </div>
           </header>
+          <button type="button" class="spatial-block__toggle" data-spatial-block-toggle aria-expanded="false">
+            <span data-fold-label data-i18n="spatial.blockExpand">展开内容</span>
+            <span class="spatial-block__toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="spatial-block__panel" data-spatial-block-panel hidden>
+          <div class="spatial-projects">
+            <!-- D-1 自研 vs 杜比体积渲染 -->
+            <article class="spatial-project" data-spatial-fold>
+              <header class="spatial-project__head">
+                <p class="spatial-project__num" data-i18n="spatial.blockD.p1.num">项目 01</p>
+                <h5 class="spatial-project__title" data-i18n="spatial.blockD.p1.title">自研体积渲染器 vs 杜比体积渲染器</h5>
+              </header>
 
-          <div class="spatial-measure">
-            <div class="spatial-measure__group">
-              <p class="spatial-measure__label" data-i18n="spatial.blockD.subSubjective">主观测评</p>
-              <div class="spatial-fill">
-                <div class="spatial-slot spatial-slot--doc">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">文档位</span>
-                  <p data-i18n="spatial.blockD.slot1">测评方案 PDF / 封面 + 目录页</p>
-                </div>
-                <div class="spatial-slot spatial-slot--shot">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-                  <p data-i18n="spatial.blockD.slot2">量表维度表 · 定位 / 包围 / 清晰度等</p>
-                </div>
-                <div class="spatial-slot spatial-slot--shot">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">截图位</span>
-                  <p data-i18n="spatial.blockD.slot3">结果摘要图 · 可打码样本名</p>
-                </div>
+              <div class="spatial-project__intro" data-intro-slot="renderer">
+                <p class="spatial-project__intro-label" data-i18n="spatial.blockD.introLabel">项目简介</p>
+                <p class="spatial-project__intro-body" data-i18n="spatial.blockD.p1.intro">
+                  以盲法 AB 听测验证自研体积渲染器在 S/M/L/R 档位与三类内容（静态人声、静态音效、动态音效）下，相对杜比在响度、体积感、定位与整体听感的相似度。工程侧自 Logic 导出 ADM，分别渲染杜比 / 自研 7.1.4，经 Reaper 响度校准后成测；评分用 1–7 分制加权得综合相似度 SS_case，并以隐藏重复试次做信度筛选，再按分级标准判定是否对标。
+                </p>
               </div>
-            </div>
 
-            <div class="spatial-measure__group">
-              <p class="spatial-measure__label" data-i18n="spatial.blockD.subEnergy">音频能量分析</p>
-              <div class="spatial-fill">
-                <div class="spatial-slot spatial-slot--doc">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.doc">报告位</span>
-                  <p data-i18n="spatial.blockD.slot4">能量分析报告 · 封面</p>
-                </div>
-                <div class="spatial-slot spatial-slot--shot">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
-                  <p data-i18n="spatial.blockD.slot5">关键图表 01 · 如短时能量 / LUFS</p>
-                </div>
-                <div class="spatial-slot spatial-slot--shot">
-                  <span class="spatial-slot__tag" data-i18n="spatial.slot.shot">图表位</span>
-                  <p data-i18n="spatial.blockD.slot6">关键图表 02 · 如频段 / 通道对比</p>
-                </div>
+              <button type="button" class="spatial-project__toggle" data-spatial-fold-toggle aria-expanded="false">
+                <span data-fold-label data-i18n="spatial.blockD.expand">展开报告与问卷</span>
+                <span class="spatial-project__toggle-icon" aria-hidden="true">+</span>
+              </button>
+
+              <div class="spatial-project__detail" data-spatial-fold-panel hidden>
+              <div class="spatial-project__readers spatial-project__readers--trio">
+                <div
+                  class="pdf-flip"
+                  id="pdfFlipEnergy"
+                  data-pdf-title="自研 vs 杜比 · 7.1.4 声道能量对比报告"
+                  data-i18n-attr-title="spatial.blockD.p1.capEnergy"
+                  data-pdf-ratio="portrait"
+                  data-pdf-pages='["assets/spatial/measure/pages/renderer-energy/page-01.jpg", "assets/spatial/measure/pages/renderer-energy/page-02.jpg", "assets/spatial/measure/pages/renderer-energy/page-03.jpg", "assets/spatial/measure/pages/renderer-energy/page-04.jpg", "assets/spatial/measure/pages/renderer-energy/page-05.jpg", "assets/spatial/measure/pages/renderer-energy/page-06.jpg", "assets/spatial/measure/pages/renderer-energy/page-07.jpg", "assets/spatial/measure/pages/renderer-energy/page-08.jpg", "assets/spatial/measure/pages/renderer-energy/page-09.jpg", "assets/spatial/measure/pages/renderer-energy/page-10.jpg", "assets/spatial/measure/pages/renderer-energy/page-11.jpg"]'
+                ></div>
+                <div
+                  class="pdf-flip"
+                  id="pdfFlipSubj"
+                  data-pdf-title="体积渲染主观测评结果报告"
+                  data-i18n-attr-title="spatial.blockD.p1.capSubj"
+                  data-pdf-ratio="portrait"
+                  data-pdf-pages='["assets/spatial/measure/pages/renderer-subj/page-01.jpg", "assets/spatial/measure/pages/renderer-subj/page-02.jpg", "assets/spatial/measure/pages/renderer-subj/page-03.jpg", "assets/spatial/measure/pages/renderer-subj/page-04.jpg", "assets/spatial/measure/pages/renderer-subj/page-05.jpg", "assets/spatial/measure/pages/renderer-subj/page-06.jpg", "assets/spatial/measure/pages/renderer-subj/page-07.jpg", "assets/spatial/measure/pages/renderer-subj/page-08.jpg", "assets/spatial/measure/pages/renderer-subj/page-09.jpg"]'
+                ></div>
+                <figure class="spatial-embed spatial-embed--panel">
+                  <div class="spatial-embed__chrome">
+                    <p class="spatial-embed__title" data-i18n="spatial.blockD.p1.capSurvey">主观听测问卷设计 · 盲法 AB 评分界面</p>
+                    <a
+                      class="spatial-embed__open"
+                      href="assets/spatial/measure/renderer/subjective-survey.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-i18n="spatial.blockD.p1.openSurvey"
+                    >新窗口</a>
+                  </div>
+                  <iframe
+                    class="spatial-embed__frame"
+                    data-src="assets/spatial/measure/renderer/subjective-survey.html"
+                    src="about:blank"
+                    title="体积渲染主观测试问卷"
+                    loading="lazy"
+                  ></iframe>
+                </figure>
               </div>
-            </div>
+              </div>
+            </article>
+
+            <!-- D-2 三体片段 · 假声源 -->
+            <article class="spatial-project" data-spatial-fold>
+              <header class="spatial-project__head">
+                <p class="spatial-project__num" data-i18n="spatial.blockD.p2.num">项目 02</p>
+                <h5 class="spatial-project__title" data-i18n="spatial.blockD.p2.title">《三体》S1E04 片段 · 7.1.2 / 7.1.4 能量对比</h5>
+              </header>
+
+              <div class="spatial-project__intro" data-intro-slot="ghost">
+                <p class="spatial-project__intro-label" data-i18n="spatial.blockD.introLabel">项目简介</p>
+                <p class="spatial-project__intro-body" data-i18n="spatial.blockD.p2.intro">
+                  对比《三体》第一季第四集片段的 7.1.2 与 7.1.4 声道能量分布时，定位到声音能量中的 ghost source（假声源）成因；据此整理《三维声空间可视化分析工具介绍》，说明假声源如何在可视化与监听中显现及原因分析。
+                </p>
+              </div>
+
+              <button type="button" class="spatial-project__toggle" data-spatial-fold-toggle aria-expanded="false">
+                <span data-fold-label data-i18n="spatial.blockD.expandMedia">展开视频与报告</span>
+                <span class="spatial-project__toggle-icon" aria-hidden="true">+</span>
+              </button>
+
+              <div class="spatial-project__detail" data-spatial-fold-panel hidden>
+              <div class="spatial-project__gallery spatial-project__gallery--media">
+                <figure class="spatial-media spatial-media--video">
+                  <video
+                    class="spatial-media__video"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/spatial/measure/ghost/still-red-02.jpg?v=20260802c"
+                  >
+                    <source src="assets/spatial/measure/energy/s1e04-energy-screencap.mp4?v=20260802c" type="video/mp4" />
+                  </video>
+                  <figcaption data-i18n="spatial.blockD.p2.capVideo">《三体》S1E04 片段 工程录屏</figcaption>
+                </figure>
+                <figure class="spatial-media">
+                  <button type="button" class="archive-shot spatial-media__shot" data-full="assets/spatial/measure/ghost/still-red-01.jpg?v=20260802c" aria-label="7.1.2 / 7.1.4 工程波形对照">
+                    <img src="assets/spatial/measure/ghost/still-red-01.jpg?v=20260802c" alt="REAPER · 7.1.2 与 7.1.4 多声道波形对照" loading="lazy" />
+                  </button>
+                  <figcaption data-i18n="spatial.blockD.p2.capTimeline">工程对照 · 7.1.2 / 7.1.4 波形</figcaption>
+                </figure>
+                <figure class="spatial-media">
+                  <button type="button" class="archive-shot spatial-media__shot" data-full="assets/spatial/measure/ghost/still-red-02.jpg?v=20260802c" aria-label="PowerMap 能量分布对比">
+                    <img src="assets/spatial/measure/ghost/still-red-02.jpg?v=20260802c" alt="SPARTA PowerMap · 7.1.2 / 7.1.4 能量分布对比" loading="lazy" />
+                  </button>
+                  <figcaption data-i18n="spatial.blockD.p2.capEncoder">PowerMap · 7.1.2 / 7.1.4 能量分布</figcaption>
+                </figure>
+              </div>
+
+              <div
+                  class="pdf-flip pdf-flip--wide"
+                  id="pdfFlipViz"
+                  data-pdf-title="三维声空间可视化分析工具介绍"
+                  data-i18n-attr-title="spatial.blockD.p2.capDoc"
+                  data-pdf-ratio="landscape"
+                  data-pdf-pages='["assets/spatial/measure/pages/viz-tool/page-01.jpg", "assets/spatial/measure/pages/viz-tool/page-02.jpg", "assets/spatial/measure/pages/viz-tool/page-03.jpg", "assets/spatial/measure/pages/viz-tool/page-04.jpg", "assets/spatial/measure/pages/viz-tool/page-05.jpg", "assets/spatial/measure/pages/viz-tool/page-06.jpg", "assets/spatial/measure/pages/viz-tool/page-07.jpg", "assets/spatial/measure/pages/viz-tool/page-08.jpg", "assets/spatial/measure/pages/viz-tool/page-09.jpg", "assets/spatial/measure/pages/viz-tool/page-10.jpg", "assets/spatial/measure/pages/viz-tool/page-11.jpg", "assets/spatial/measure/pages/viz-tool/page-12.jpg", "assets/spatial/measure/pages/viz-tool/page-13.jpg", "assets/spatial/measure/pages/viz-tool/page-14.jpg", "assets/spatial/measure/pages/viz-tool/page-15.jpg", "assets/spatial/measure/pages/viz-tool/page-16.jpg", "assets/spatial/measure/pages/viz-tool/page-17.jpg", "assets/spatial/measure/pages/viz-tool/page-18.jpg", "assets/spatial/measure/pages/viz-tool/page-19.jpg", "assets/spatial/measure/pages/viz-tool/page-20.jpg", "assets/spatial/measure/pages/viz-tool/page-21.jpg", "assets/spatial/measure/pages/viz-tool/page-22.jpg", "assets/spatial/measure/pages/viz-tool/page-23.jpg", "assets/spatial/measure/pages/viz-tool/page-24.jpg", "assets/spatial/measure/pages/viz-tool/page-25.jpg", "assets/spatial/measure/pages/viz-tool/page-26.jpg", "assets/spatial/measure/pages/viz-tool/page-27.jpg", "assets/spatial/measure/pages/viz-tool/page-28.jpg"]'
+                ></div>
+              </div>
+            </article>
+          </div>
           </div>
         </section>
-
-        <div class="module-row reveal" data-reveal>
-          <div class="module module--archive module--archive-full">
-            <p class="module__eyebrow" data-i18n="module.archive">工作现场</p>
-            <h4 class="module__title" data-i18n="spatial.archiveTitle">听音室 / 产线现场</h4>
-            <div class="archive-grid">
-              <div class="archive-slot" data-i18n="slot.photo">放置听音室照片</div>
-              <div class="archive-slot" data-i18n="slot.diagram">放置阵列示意 / 流程图</div>
-              <div class="archive-slot archive-slot--wide" data-i18n="slot.report">放置测评 / 报告现场照</div>
-            </div>
-          </div>
-        </div>
       </article>
 
 <!-- 02 Commercial -->
@@ -537,7 +630,22 @@
             <div class="ad-timeline__dots" id="adTimelineDots"></div>
           </div>
 
-          <div class="ad-role-list" id="adRoleList" aria-label="作品角色一览"></div>
+          <div class="ad-role-fold" data-ad-role-fold>
+            <button
+              type="button"
+              class="ad-role-fold__toggle"
+              data-ad-role-toggle
+              aria-expanded="false"
+              data-i18n-aria="commercial.listToggleAria"
+              aria-label="展开或收起作品列表"
+            >
+              <span class="ad-role-fold__count" data-ad-role-count>0</span>
+              <span class="ad-role-fold__label" data-fold-label data-i18n="commercial.listExpand">展开作品列表</span>
+            </button>
+            <div class="ad-role-fold__panel" data-ad-role-panel hidden>
+              <div class="ad-role-list" id="adRoleList" aria-label="作品角色一览"></div>
+            </div>
+          </div>
         </div>
 
         <div class="module-row reveal" data-reveal>
@@ -636,10 +744,10 @@
                 <span class="project__index">02</span>
               </div>
               <div class="project__body">
-                <div class="project__tags"><span>Suspense</span><span>Sound Post</span><span>Fixion</span></div>
+                <div class="project__tags"><span>Suspense</span><span>Sound Post</span><span>2024–2025</span></div>
                 <h4 class="project__title" data-i18n="projects.mirage.title">悬疑片《蜃楼》</h4>
                 <p class="project__role" data-i18n="projects.mirage.role">声音后期</p>
-                <p class="project__excerpt" data-i18n="projects.mirage.excerpt">Fixion Fest 最佳中长片 · 可听混音版本，可看获奖海报。</p>
+                <p class="project__excerpt" data-i18n="projects.mirage.excerpt">2024–2025 制作 · Fixion Fest 最佳中长片 · 可看 4K 重渲成片与获奖海报。</p>
               </div>
               <span class="project__arrow" aria-hidden="true">→</span>
             </button>
@@ -825,7 +933,7 @@
                 <div class="project__tags"><span>Mini Program</span><span>Yueju</span><span>2021</span></div>
                 <h4 class="project__title" data-i18n="projects.yueyin.title">越音易通</h4>
                 <p class="project__role" data-i18n="projects.yueyin.role">发音音库录音 / 音频处理</p>
-                <p class="project__excerpt" data-i18n="projects.yueyin.excerpt">2021 · 微信小程序 · 浙江艺术职业学院；微信内搜索体验。</p>
+                <p class="project__excerpt" data-i18n="projects.yueyin.excerpt">2021 · 微信小程序 · 浙江艺术职业学院；音库按声母 / 韵母 / 声调 / 韵辙划分。</p>
               </div>
               <span class="project__arrow" aria-hidden="true">→</span>
             </button>
@@ -932,10 +1040,12 @@
     <img id="pageLightboxImg" alt="" />
   </div>
 
-  <script src="js/i18n.js?v=20260729a"></script>
-  <script src="js/projects-media.js?v=20260729a"></script>
-  <script src="js/commercial.js?v=20260729a"></script>
-  <script src="js/spatial-trailers.js?v=20260729a"></script>
-  <script src="js/main.js?v=20260729a"></script>
+  <script src="js/i18n.js?v=20260802o"></script>
+  <script src="js/projects-media.js?v=20260802n"></script>
+  <script src="js/commercial.js?v=20260802o"></script>
+  <script src="js/spatial-trailers.js?v=20260802k"></script>
+  <script src="js/spatial-json.js?v=20260802k"></script>
+  <script src="js/pdf-flip.js?v=20260802k"></script>
+  <script src="js/main.js?v=20260802o"></script>
 </body>
 </html>

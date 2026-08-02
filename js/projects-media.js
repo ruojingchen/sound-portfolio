@@ -26,29 +26,10 @@ window.CRJ_PROJECT_MEDIA = {
 
   mirage: {
     tabLabels: {
-      film: { zh: "混音", en: "Mix" },
+      film: { zh: "成片", en: "Film" },
       photos: { zh: "海报", en: "Poster" },
     },
-    videos: [
-      {
-        id: "mix",
-        title: { zh: "混音版本", en: "Mix" },
-        items: [
-          {
-            kind: "audio",
-            label: {
-              zh: "《蜃楼》混音 · 约 38 分钟",
-              en: "Mirage mix · ~38 min",
-            },
-            src: "assets/film/mirage/mix.m4a",
-            note: {
-              zh: "全片混音音频 · 可拖动进度条试听",
-              en: "Full mix · scrub to sample",
-            },
-          },
-        ],
-      },
-    ],
+    video: "assets/film/mirage/film.mp4",
     photos: [
       {
         src: "assets/film/mirage/poster.jpg",

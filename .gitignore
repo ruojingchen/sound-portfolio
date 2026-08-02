@@ -15,3 +15,16 @@ assets/**/*-master.*
 assets/**/*.prores.*
 logs/
 **/*.partial*
+
+# Local-only giants (GitHub 100MB hard limit / Vercel upload budget)
+assets/film/mirage/film.mp4
+assets/film/mirage/mix.wav
+assets/install/dmsp/screen-record.mov
+assets/install/dmsp/sfx/chaos-music.wav
+assets/game/soundscape/*.zip
+assets/spatial/posters/_unmatched/
+assets/spatial/trailers/*-atmos-adm.mp4
+!assets/spatial/trailers/baima-atmos-adm.mp4
+!assets/spatial/trailers/huxiaojiu-atmos-adm.mp4
+!assets/spatial/trailers/zootopia-atmos-adm.mp4
+assets/install/a1/demo.mp4

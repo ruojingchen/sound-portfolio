@@ -843,6 +843,106 @@
     });
   });
 
+  // ---------- Spatial blocks B / C / D body fold ----------
+  document.querySelectorAll("[data-spatial-block-fold]").forEach((fold) => {
+    const btn = fold.querySelector("[data-spatial-block-toggle]");
+    const panel = fold.querySelector("[data-spatial-block-panel]");
+    const label = fold.querySelector("[data-fold-label]");
+    if (!btn || !panel) return;
+
+    function setOpen(open) {
+      fold.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.hidden = !open;
+      if (label) {
+        label.textContent = I18N.t(open ? "spatial.blockCollapse" : "spatial.blockExpand");
+      }
+      if (!open) {
+        panel.querySelectorAll("video, audio").forEach((media) => {
+          try {
+            media.pause();
+          } catch (_) {}
+        });
+        panel.querySelectorAll("iframe[data-src]").forEach((frame) => {
+          frame.src = "about:blank";
+        });
+      }
+    }
+
+    btn.addEventListener("click", () => setOpen(!fold.classList.contains("is-open")));
+    window.addEventListener("crj:langchange", () => {
+      setOpen(fold.classList.contains("is-open"));
+    });
+  });
+
+  // ---------- Commercial ad role list fold ----------
+  document.querySelectorAll("[data-ad-role-fold]").forEach((fold) => {
+    const btn = fold.querySelector("[data-ad-role-toggle]");
+    const panel = fold.querySelector("[data-ad-role-panel]");
+    const label = fold.querySelector("[data-fold-label]");
+    if (!btn || !panel) return;
+
+    function setOpen(open) {
+      fold.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.hidden = !open;
+      if (label) {
+        label.textContent = I18N.t(open ? "commercial.listCollapse" : "commercial.listExpand");
+      }
+    }
+
+    btn.addEventListener("click", () => setOpen(!fold.classList.contains("is-open")));
+    window.addEventListener("crj:langchange", () => {
+      setOpen(fold.classList.contains("is-open"));
+    });
+  });
+
+  // ---------- Spatial Block D project fold ----------
+  document.querySelectorAll("[data-spatial-fold]").forEach((fold) => {
+    const btn = fold.querySelector("[data-spatial-fold-toggle]");
+    const panel = fold.querySelector("[data-spatial-fold-panel]");
+    const label = fold.querySelector("[data-fold-label]");
+    if (!btn || !panel) return;
+
+    const expandKey =
+      btn.querySelector("[data-i18n]")?.getAttribute("data-i18n") ||
+      "spatial.blockD.expand";
+    const collapseKey =
+      expandKey === "spatial.blockD.expandMedia"
+        ? "spatial.blockD.collapseMedia"
+        : "spatial.blockD.collapse";
+
+    function setOpen(open) {
+      fold.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.hidden = !open;
+      if (label) label.textContent = I18N.t(open ? collapseKey : expandKey);
+
+      panel.querySelectorAll("iframe[data-src]").forEach((frame) => {
+        if (open) {
+          if (!frame.getAttribute("src") || frame.getAttribute("src") === "about:blank") {
+            frame.src = frame.getAttribute("data-src");
+          }
+        } else {
+          frame.src = "about:blank";
+        }
+      });
+
+      if (!open) {
+        panel.querySelectorAll("video, audio").forEach((media) => {
+          try {
+            media.pause();
+          } catch (_) {}
+        });
+      }
+    }
+
+    btn.addEventListener("click", () => setOpen(!fold.classList.contains("is-open")));
+    window.addEventListener("crj:langchange", () => {
+      setOpen(fold.classList.contains("is-open"));
+    });
+  });
+
   // ---------- Page archive lightbox (commercial work photos) ----------
   const pageLightbox = document.getElementById("pageLightbox");
   const pageLightboxImg = document.getElementById("pageLightboxImg");

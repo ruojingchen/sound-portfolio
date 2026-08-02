@@ -351,6 +351,8 @@ window.CRJ_ADS = (() => {
         btn.addEventListener("click", () => openPlayer(Number(btn.dataset.index)));
         btn.addEventListener("mouseenter", () => setTarget(Number(btn.dataset.index)));
       });
+      const countEl = document.querySelector("[data-ad-role-count]");
+      if (countEl) countEl.textContent = String(ADS.length);
     }
   }
 
