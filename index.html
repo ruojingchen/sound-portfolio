@@ -7,8 +7,8 @@
   <title>陈若菁 · Sound Designer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260803f" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=20260803j" />
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -59,35 +59,17 @@
         </aside>
 
         <div class="gate__content">
-          <header class="gate__names">
-            <div class="gate__name-row">
-              <p class="gate__brand" data-i18n="gate.brand">陈若菁</p>
-              <span class="gate__name-dot" aria-hidden="true"></span>
-              <p class="gate__brand-en">RUOJING CHEN</p>
-            </div>
-            <p class="gate__role" data-i18n="gate.role">声音设计者 · Sound Designer</p>
-          </header>
-
           <section class="gate__part">
-            <h3 class="gate__part-title" data-i18n="gate.eduTitle">教育经历</h3>
-            <ul class="gate__edu">
-              <li>
-                <div class="gate__edu-main">
-                  <span class="gate__edu-school" data-i18n="gate.edu1School">爱丁堡大学</span>
-                  <span class="gate__edu-sep">·</span>
-                  <span class="gate__edu-degree" data-i18n="gate.edu1Degree">声音设计专业硕士</span>
-                </div>
-                <span class="gate__edu-date" data-i18n="gate.edu1Date">2023.09 — 2024.11</span>
-              </li>
-              <li>
-                <div class="gate__edu-main">
-                  <span class="gate__edu-school" data-i18n="gate.edu2School">浙江传媒学院</span>
-                  <span class="gate__edu-sep">·</span>
-                  <span class="gate__edu-degree" data-i18n="gate.edu2Degree">录音艺术专业本科</span>
-                </div>
-                <span class="gate__edu-date" data-i18n="gate.edu2Date">2017.09 — 2021.06</span>
-              </li>
-            </ul>
+            <h3 class="gate__part-title gate__about-title">
+              关于我
+              <span class="gate__part-en">ABOUT ME</span>
+            </h3>
+            <p class="gate__about-lead" data-i18n-html="about.lead">
+              我是<strong class="gate__name">陈若菁</strong>，声音设计者。现于喜马拉雅负责车联网空间音频与全景声内容制作；此前在爱丁堡大学攻读声音设计硕士，本科毕业于浙江传媒学院录音艺术专业。
+            </p>
+            <p class="gate__about-body" data-i18n="about.body">
+              我的实践横跨影视、广告、空间音频、交互装置与现场综艺。商业项目追求可交付的标准与质感；影视与游戏交互里，留下更多个人艺术判断。技术是工具，聆听是方法。
+            </p>
           </section>
 
           <section class="gate__part">
@@ -167,7 +149,6 @@
     </a>
     <nav class="nav__links" aria-label="Primary" data-i18n-aria="nav.aria">
       <a href="#work" data-section="work" data-i18n="nav.work">作品</a>
-      <a href="#about" data-section="about" data-i18n="nav.about">关于</a>
       <a href="#contact" data-section="contact" data-i18n="nav.contact">联系</a>
     </nav>
     <div class="nav__actions">
@@ -192,7 +173,6 @@
     <a href="#chapter-film" data-i18n="chapters.film">影视内容</a>
     <a href="#chapter-interactive" data-i18n="chapters.interactive">交互装置</a>
     <a href="#chapter-live" data-i18n="chapters.live">现场综艺</a>
-    <a href="#about" data-i18n="nav.aboutMobile">关于</a>
     <a href="#contact" data-i18n="nav.contactMobile">联系</a>
   </div>
 
@@ -935,47 +915,6 @@
       </article>
     </section>
 
-    <!-- About -->
-
-
-    <section class="section about" id="about">
-      <div class="about__grid">
-        <div class="about__text">
-          <p class="section__eyebrow reveal" data-reveal data-i18n="about.eyebrow">About</p>
-          <h2 class="section__title reveal" data-reveal data-i18n="about.title">关于</h2>
-          <p class="about__lead reveal" data-reveal data-i18n="about.lead">
-            我是陈若菁，声音设计者。现于喜马拉雅负责车联网空间音频与全景声内容制作；此前在爱丁堡大学攻读声音设计硕士，本科毕业于浙江传媒学院录音艺术专业。
-          </p>
-          <p class="about__body reveal" data-reveal data-i18n="about.body">
-            我的实践横跨影视、广告、空间音频、交互装置与现场综艺。商业项目追求可交付的标准与质感；影视与游戏交互里，留下更多个人艺术判断。技术是工具，聆听是方法。
-          </p>
-          <dl class="about__facts reveal" data-reveal>
-            <div>
-              <dt data-i18n="about.edu">教育</dt>
-              <dd data-i18n-html="about.eduValue">爱丁堡大学 · 声音设计硕士<br />浙江传媒学院 · 录音艺术</dd>
-            </div>
-            <div>
-              <dt data-i18n="about.tools">工具</dt>
-              <dd data-i18n-html="about.toolsValue">Pro Tools · Logic · Reaper<br />Wwise · MaxMSP · Unity</dd>
-            </div>
-            <div>
-              <dt data-i18n="about.role">现任</dt>
-              <dd data-i18n-html="about.roleValue">喜马拉雅 · 车联网空间音频<br />全景声制作负责人</dd>
-            </div>
-          </dl>
-        </div>
-        <aside class="about__panel reveal" data-reveal>
-          <p class="about__panel-label" data-i18n="about.notes">聆听笔记</p>
-          <blockquote data-i18n="about.quote">
-            「好的声音设计，不是被听见，而是被相信——你相信那个空间是真实的。」
-          </blockquote>
-          <div class="about__signal" aria-hidden="true">
-            <canvas id="signalCanvas" width="320" height="80"></canvas>
-          </div>
-        </aside>
-      </div>
-    </section>
-
     <section class="section contact" id="contact">
       <div class="contact__inner">
         <p class="section__eyebrow reveal" data-reveal data-i18n="contact.eyebrow">Contact</p>
@@ -987,8 +926,6 @@
           chenruojing0@gmail.com
         </a>
         <div class="contact__meta reveal" data-reveal>
-          <span data-i18n="contact.city">上海</span>
-          <span class="contact__dot"></span>
           <span>(+86) 159 8883 4836</span>
         </div>
       </div>
@@ -1033,11 +970,11 @@
     <img id="pageLightboxImg" alt="" />
   </div>
 
-  <script src="js/i18n.js?v=20260803d"></script>
+  <script src="js/i18n.js?v=20260803f"></script>
   <script src="js/projects-media.js?v=20260803a"></script>
   <script src="js/commercial.js?v=20260802o"></script>
   <script src="js/spatial-trailers.js?v=20260802k"></script>
   <script src="js/spatial-json.js?v=20260803d"></script>
-  <script src="js/main.js?v=20260802o"></script>
+  <script src="js/main.js?v=20260803a"></script>
 </body>
 </html>

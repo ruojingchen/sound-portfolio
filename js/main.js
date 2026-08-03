@@ -224,7 +224,7 @@
 
     if (nav) nav.classList.toggle("is-solid", scrolled > 40);
 
-    const sections = ["work", "about", "contact"];
+    const sections = ["work", "contact"];
     let current = "";
     sections.forEach((id) => {
       const el = document.getElementById(id);
@@ -325,36 +325,6 @@
   }
 
   initWaveCanvases();
-
-  // ---------- About signal ----------
-  function initSignalCanvas() {
-    const canvas = document.getElementById("signalCanvas");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let t = 0;
-    function draw() {
-      const w = canvas.width;
-      const h = canvas.height;
-      ctx.clearRect(0, 0, w, h);
-      ctx.beginPath();
-      t += 0.04;
-      for (let x = 0; x <= w; x++) {
-        const y =
-          h / 2 +
-          Math.sin(x * 0.05 + t) * 18 +
-          Math.sin(x * 0.12 + t * 1.7) * 8;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = "rgba(196, 165, 116, 0.7)";
-      ctx.lineWidth = 1.25;
-      ctx.stroke();
-      requestAnimationFrame(draw);
-    }
-    draw();
-  }
-
-  initSignalCanvas();
 
   const projects = document.querySelectorAll(".project");
   projects.forEach((p) => {

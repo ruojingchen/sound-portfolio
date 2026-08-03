@@ -20,6 +20,7 @@
   --danger-close: #e8e2d6;
 
   --font: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-name: "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC", Georgia, serif;
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-adsr: cubic-bezier(0.33, 1, 0.68, 1);
@@ -316,6 +317,10 @@ body.is-ready:not(.touch-device) .cursor {
 }
 
 .gate__part-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.65rem;
   font-size: 0.64rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -324,41 +329,48 @@ body.is-ready:not(.touch-device) .cursor {
   margin: 0 0 0.45rem;
 }
 
-.gate__edu {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin: 0;
+.gate__about-title {
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.7rem;
+  gap: 0.5rem 0.75rem;
 }
 
-.gate__edu li {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.15rem 1rem;
-  align-items: baseline;
-}
-
-.gate__edu-main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  align-items: baseline;
-  font-size: 0.86rem;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.gate__edu-school { color: var(--text); }
-.gate__edu-sep { color: var(--text-faint); }
-.gate__edu-degree { color: var(--text-dim); }
-
-.gate__edu-date {
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
+.gate__part-en {
   color: var(--text-faint);
-  white-space: nowrap;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+.gate__about-title .gate__part-en {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--signal);
+  opacity: 0.72;
+}
+
+.gate__about-lead {
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 0.65rem;
+}
+
+.gate__name {
+  font-family: var(--font-name);
+  font-size: 1.12em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: inherit;
+}
+
+.gate__about-body {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0;
 }
 
 .gate__skills-text {
@@ -557,19 +569,21 @@ body.is-ready:not(.touch-device) .cursor {
   }
 
   .gate__content,
-  .gate__toolkit-group,
-  .gate__name-row {
+  .gate__toolkit-group {
     align-items: center;
     justify-content: center;
     text-align: center;
   }
 
-  .gate__edu li {
-    flex-direction: column;
-    align-items: center;
+  .gate__part-title {
+    justify-content: center;
   }
 
-  .gate__edu-main,
+  .gate__about-lead,
+  .gate__about-body {
+    text-align: center;
+  }
+
   .gate__tools,
   .gate__eq {
     justify-content: center;
