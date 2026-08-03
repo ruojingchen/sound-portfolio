@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=20260802o" />
+  <link rel="stylesheet" href="css/styles.css?v=20260803b" />
 </head>
 <body>
   <canvas id="field" aria-hidden="true"></canvas>
@@ -334,47 +334,74 @@
           </button>
           <div class="spatial-block__panel" data-spatial-block-panel hidden>
           <div class="spatial-json-grid" id="spatialJsonGrid">
-            <article class="spatial-json" data-json-src="assets/spatial/json/invincible-destiny.json">
+            <article class="spatial-json spatial-json--redacted">
               <header class="spatial-json__head">
                 <div>
-                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 产线配置</p>
                   <h5 class="spatial-json__title" data-i18n="spatial.blockB.j1.title">无敌天命</h5>
                   <p class="spatial-json__file">Invincible destiny_0123_Edit_1.json</p>
                 </div>
-                <div class="spatial-json__actions">
-                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
-                </div>
+                <p class="spatial-json__badge" data-i18n="spatial.internal">公司内部文件</p>
               </header>
-              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+              <div class="spatial-json__redact" aria-hidden="true">
+                <pre class="spatial-json__pre spatial-json__pre--blur"><code>{
+  "source_type": "••••••••",
+  "azimuth": "••",
+  "elevation": "••",
+  "spread": "••••",
+  "distance": "••••",
+  "lfe": "••••",
+  "route": { "••••": "••••••••" }
+}</code></pre>
+                <p class="spatial-json__stamp" data-i18n="spatial.internal">公司内部文件</p>
+              </div>
             </article>
-            <article class="spatial-json" data-json-src="assets/spatial/json/reborn.json">
+            <article class="spatial-json spatial-json--redacted">
               <header class="spatial-json__head">
                 <div>
-                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 产线配置</p>
                   <h5 class="spatial-json__title" data-i18n="spatial.blockB.j2.title">重生回来</h5>
                   <p class="spatial-json__file">Reborn_1105_Edit_1.json</p>
                 </div>
-                <div class="spatial-json__actions">
-                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
-                </div>
+                <p class="spatial-json__badge" data-i18n="spatial.internal">公司内部文件</p>
               </header>
-              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+              <div class="spatial-json__redact" aria-hidden="true">
+                <pre class="spatial-json__pre spatial-json__pre--blur"><code>{
+  "source_type": "••••••••",
+  "azimuth": "••",
+  "elevation": "••",
+  "spread": "••••",
+  "distance": "••••",
+  "lfe": "••••",
+  "route": { "••••": "••••••••" }
+}</code></pre>
+                <p class="spatial-json__stamp" data-i18n="spatial.internal">公司内部文件</p>
+              </div>
             </article>
-            <article class="spatial-json" data-json-src="assets/spatial/json/fengjiang.json">
+            <article class="spatial-json spatial-json--redacted">
               <header class="spatial-json__head">
                 <div>
-                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 展示用</p>
+                  <p class="spatial-json__tag" data-i18n="spatial.blockB.tag">JSON · 产线配置</p>
                   <h5 class="spatial-json__title" data-i18n="spatial.blockB.j3.title">封疆</h5>
                   <p class="spatial-json__file">fengjiang_0316.json</p>
                 </div>
-                <div class="spatial-json__actions">
-                  <button type="button" class="spatial-json__btn" data-json-toggle data-i18n="spatial.blockB.expand">展开</button>
-                </div>
+                <p class="spatial-json__badge" data-i18n="spatial.internal">公司内部文件</p>
               </header>
-              <pre class="spatial-json__pre" tabindex="0"><code class="spatial-json__code" data-json-code>loading…</code></pre>
+              <div class="spatial-json__redact" aria-hidden="true">
+                <pre class="spatial-json__pre spatial-json__pre--blur"><code>{
+  "source_type": "••••••••",
+  "azimuth": "••",
+  "elevation": "••",
+  "spread": "••••",
+  "distance": "••••",
+  "lfe": "••••",
+  "route": { "••••": "••••••••" }
+}</code></pre>
+                <p class="spatial-json__stamp" data-i18n="spatial.internal">公司内部文件</p>
+              </div>
             </article>
           </div>
-          <p class="spatial-json-note" data-i18n="spatial.blockB.note">展示字段层级与命名；配置绑定内部产线，不可下载或复用。</p>
+          <p class="spatial-json-note" data-i18n="spatial.blockB.note">正文已模糊处理 · 公司内部文件，仅作能力示意，不可下载或复用。</p>
           </div>
         </section>
 
@@ -466,48 +493,28 @@
               </div>
 
               <button type="button" class="spatial-project__toggle" data-spatial-fold-toggle aria-expanded="false">
-                <span data-fold-label data-i18n="spatial.blockD.expand">展开报告与问卷</span>
+                <span data-fold-label data-i18n="spatial.blockD.expand">展开报告封面</span>
                 <span class="spatial-project__toggle-icon" aria-hidden="true">+</span>
               </button>
 
               <div class="spatial-project__detail" data-spatial-fold-panel hidden>
-              <div class="spatial-project__readers spatial-project__readers--trio">
-                <div
-                  class="pdf-flip"
-                  id="pdfFlipEnergy"
-                  data-pdf-title="自研 vs 杜比 · 7.1.4 声道能量对比报告"
-                  data-i18n-attr-title="spatial.blockD.p1.capEnergy"
-                  data-pdf-ratio="portrait"
-                  data-pdf-pages='["assets/spatial/measure/pages/renderer-energy/page-01.jpg", "assets/spatial/measure/pages/renderer-energy/page-02.jpg", "assets/spatial/measure/pages/renderer-energy/page-03.jpg", "assets/spatial/measure/pages/renderer-energy/page-04.jpg", "assets/spatial/measure/pages/renderer-energy/page-05.jpg", "assets/spatial/measure/pages/renderer-energy/page-06.jpg", "assets/spatial/measure/pages/renderer-energy/page-07.jpg", "assets/spatial/measure/pages/renderer-energy/page-08.jpg", "assets/spatial/measure/pages/renderer-energy/page-09.jpg", "assets/spatial/measure/pages/renderer-energy/page-10.jpg", "assets/spatial/measure/pages/renderer-energy/page-11.jpg"]'
-                ></div>
-                <div
-                  class="pdf-flip"
-                  id="pdfFlipSubj"
-                  data-pdf-title="体积渲染主观测评结果报告"
-                  data-i18n-attr-title="spatial.blockD.p1.capSubj"
-                  data-pdf-ratio="portrait"
-                  data-pdf-pages='["assets/spatial/measure/pages/renderer-subj/page-01.jpg", "assets/spatial/measure/pages/renderer-subj/page-02.jpg", "assets/spatial/measure/pages/renderer-subj/page-03.jpg", "assets/spatial/measure/pages/renderer-subj/page-04.jpg", "assets/spatial/measure/pages/renderer-subj/page-05.jpg", "assets/spatial/measure/pages/renderer-subj/page-06.jpg", "assets/spatial/measure/pages/renderer-subj/page-07.jpg", "assets/spatial/measure/pages/renderer-subj/page-08.jpg", "assets/spatial/measure/pages/renderer-subj/page-09.jpg"]'
-                ></div>
-                <figure class="spatial-embed spatial-embed--panel">
-                  <div class="spatial-embed__chrome">
-                    <p class="spatial-embed__title" data-i18n="spatial.blockD.p1.capSurvey">主观听测问卷设计 · 盲法 AB 评分界面</p>
-                    <a
-                      class="spatial-embed__open"
-                      href="assets/spatial/measure/renderer/subjective-survey.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-i18n="spatial.blockD.p1.openSurvey"
-                    >新窗口</a>
+              <div class="spatial-project__covers spatial-project__covers--duo">
+                <figure class="spatial-cover">
+                  <div class="spatial-cover__frame">
+                    <img src="assets/spatial/measure/renderer/report-energy-cover.jpg" alt="" loading="lazy" />
+                    <p class="spatial-cover__stamp" data-i18n="spatial.internal">公司内部文件</p>
                   </div>
-                  <iframe
-                    class="spatial-embed__frame"
-                    data-src="assets/spatial/measure/renderer/subjective-survey.html"
-                    src="about:blank"
-                    title="体积渲染主观测试问卷"
-                    loading="lazy"
-                  ></iframe>
+                  <figcaption data-i18n="spatial.blockD.p1.capEnergy">客观 · 7.1.4 声道能量对比报告</figcaption>
+                </figure>
+                <figure class="spatial-cover">
+                  <div class="spatial-cover__frame">
+                    <img src="assets/spatial/measure/renderer/report-subjective-cover.jpg" alt="" loading="lazy" />
+                    <p class="spatial-cover__stamp" data-i18n="spatial.internal">公司内部文件</p>
+                  </div>
+                  <figcaption data-i18n="spatial.blockD.p1.capSubj">主观 · 体积渲染听测结果报告</figcaption>
                 </figure>
               </div>
+              <p class="spatial-cover-note" data-i18n="spatial.blockD.coverNote">仅展示报告封面 · 公司内部文件，正文与翻页已移除。</p>
               </div>
             </article>
 
@@ -526,7 +533,7 @@
               </div>
 
               <button type="button" class="spatial-project__toggle" data-spatial-fold-toggle aria-expanded="false">
-                <span data-fold-label data-i18n="spatial.blockD.expandMedia">展开视频与报告</span>
+                <span data-fold-label data-i18n="spatial.blockD.expandMedia">展开视频与封面</span>
                 <span class="spatial-project__toggle-icon" aria-hidden="true">+</span>
               </button>
 
@@ -558,14 +565,14 @@
                 </figure>
               </div>
 
-              <div
-                  class="pdf-flip pdf-flip--wide"
-                  id="pdfFlipViz"
-                  data-pdf-title="三维声空间可视化分析工具介绍"
-                  data-i18n-attr-title="spatial.blockD.p2.capDoc"
-                  data-pdf-ratio="landscape"
-                  data-pdf-pages='["assets/spatial/measure/pages/viz-tool/page-01.jpg", "assets/spatial/measure/pages/viz-tool/page-02.jpg", "assets/spatial/measure/pages/viz-tool/page-03.jpg", "assets/spatial/measure/pages/viz-tool/page-04.jpg", "assets/spatial/measure/pages/viz-tool/page-05.jpg", "assets/spatial/measure/pages/viz-tool/page-06.jpg", "assets/spatial/measure/pages/viz-tool/page-07.jpg", "assets/spatial/measure/pages/viz-tool/page-08.jpg", "assets/spatial/measure/pages/viz-tool/page-09.jpg", "assets/spatial/measure/pages/viz-tool/page-10.jpg", "assets/spatial/measure/pages/viz-tool/page-11.jpg", "assets/spatial/measure/pages/viz-tool/page-12.jpg", "assets/spatial/measure/pages/viz-tool/page-13.jpg", "assets/spatial/measure/pages/viz-tool/page-14.jpg", "assets/spatial/measure/pages/viz-tool/page-15.jpg", "assets/spatial/measure/pages/viz-tool/page-16.jpg", "assets/spatial/measure/pages/viz-tool/page-17.jpg", "assets/spatial/measure/pages/viz-tool/page-18.jpg", "assets/spatial/measure/pages/viz-tool/page-19.jpg", "assets/spatial/measure/pages/viz-tool/page-20.jpg", "assets/spatial/measure/pages/viz-tool/page-21.jpg", "assets/spatial/measure/pages/viz-tool/page-22.jpg", "assets/spatial/measure/pages/viz-tool/page-23.jpg", "assets/spatial/measure/pages/viz-tool/page-24.jpg", "assets/spatial/measure/pages/viz-tool/page-25.jpg", "assets/spatial/measure/pages/viz-tool/page-26.jpg", "assets/spatial/measure/pages/viz-tool/page-27.jpg", "assets/spatial/measure/pages/viz-tool/page-28.jpg"]'
-                ></div>
+              <figure class="spatial-cover spatial-cover--wide">
+                <div class="spatial-cover__frame">
+                  <img src="assets/spatial/measure/ghost/viz-tool-cover.jpg" alt="" loading="lazy" />
+                  <p class="spatial-cover__stamp" data-i18n="spatial.internal">公司内部文件</p>
+                </div>
+                <figcaption data-i18n="spatial.blockD.p2.capDoc">《三维声空间可视化分析工具介绍》· 含假声源问题说明</figcaption>
+              </figure>
+              <p class="spatial-cover-note" data-i18n="spatial.blockD.coverNote">仅展示报告封面 · 公司内部文件，正文与翻页已移除。</p>
               </div>
             </article>
           </div>
@@ -1040,12 +1047,11 @@
     <img id="pageLightboxImg" alt="" />
   </div>
 
-  <script src="js/i18n.js?v=20260802o"></script>
+  <script src="js/i18n.js?v=20260803b"></script>
   <script src="js/projects-media.js?v=20260803a"></script>
   <script src="js/commercial.js?v=20260802o"></script>
   <script src="js/spatial-trailers.js?v=20260802k"></script>
-  <script src="js/spatial-json.js?v=20260802k"></script>
-  <script src="js/pdf-flip.js?v=20260802k"></script>
+  <script src="js/spatial-json.js?v=20260803b"></script>
   <script src="js/main.js?v=20260802o"></script>
 </body>
 </html>

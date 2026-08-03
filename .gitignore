@@ -29,3 +29,9 @@ assets/spatial/trailers/*-atmos-adm.mp4
 !assets/spatial/trailers/zootopia-atmos-adm.mp4
 # Keep full 720p mirage local-only if present; prefer film-web.mp4 in repo
 assets/film/mirage/film.mp4
+
+# Internal pipeline docs — not published on the site
+assets/spatial/json/
+assets/spatial/measure/pages/
+assets/spatial/measure/pdf/
+assets/spatial/measure/renderer/subjective-survey.html
