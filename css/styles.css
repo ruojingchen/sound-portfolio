@@ -1606,30 +1606,46 @@ body[data-lang="en"] .hero__title-sub {
 
 .spatial-json__redact {
   position: relative;
+  min-height: 12rem;
+  overflow: hidden;
+  background: #07090c;
 }
 
 .spatial-json__pre--blur {
-  max-height: 11rem;
-  filter: blur(5px);
-  opacity: 0.55;
+  max-height: 14rem;
+  margin: 0;
+  filter: blur(3.2px);
+  opacity: 0.88;
   pointer-events: none;
   user-select: none;
+  -webkit-user-select: none;
+}
+
+.spatial-json--redacted .spatial-json__pre {
+  max-height: 14rem;
+  overflow: hidden;
 }
 
 .spatial-json__stamp {
   position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: inline-block;
+  width: max-content;
+  max-width: calc(100% - 1.5rem);
   margin: 0;
-  padding: 0.75rem;
-  background: rgba(6, 8, 10, 0.42);
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(196, 165, 116, 0.55);
+  background: rgba(8, 10, 12, 0.72);
   color: var(--signal);
-  font-size: 0.95rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-align: center;
   pointer-events: none;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .spatial-json__code {
