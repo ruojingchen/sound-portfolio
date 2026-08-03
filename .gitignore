@@ -32,6 +32,9 @@ assets/film/mirage/film.mp4
 
 # Internal pipeline docs — not published on the site
 assets/spatial/json/
-assets/spatial/measure/pages/
+assets/spatial/measure/pages/**
+!assets/spatial/measure/pages/
+!assets/spatial/measure/pages/*/
+!assets/spatial/measure/pages/*/page-01.jpg
 assets/spatial/measure/pdf/
 assets/spatial/measure/renderer/subjective-survey.html
