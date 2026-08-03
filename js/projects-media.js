@@ -29,7 +29,7 @@ window.CRJ_PROJECT_MEDIA = {
       film: { zh: "成片", en: "Film" },
       photos: { zh: "海报", en: "Poster" },
     },
-    video: "assets/film/mirage/film.mp4",
+    video: "assets/film/mirage/film-web.mp4",
     photos: [
       {
         src: "assets/film/mirage/poster.jpg",
