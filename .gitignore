@@ -23,10 +23,7 @@ assets/install/dmsp/screen-record.mov
 assets/install/dmsp/sfx/chaos-music.wav
 assets/game/soundscape/*.zip
 assets/spatial/posters/_unmatched/
-assets/spatial/trailers/*-atmos-adm.mp4
-!assets/spatial/trailers/baima-atmos-adm.mp4
-!assets/spatial/trailers/huxiaojiu-atmos-adm.mp4
-!assets/spatial/trailers/zootopia-atmos-adm.mp4
+# Atmos ADM trailers are committed (all under GitHub 100MB limit)
 # Keep full 720p mirage local-only if present; prefer film-web.mp4 in repo
 assets/film/mirage/film.mp4
 
