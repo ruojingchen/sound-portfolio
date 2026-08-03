@@ -1611,8 +1611,8 @@ body[data-lang="en"] .hero__title-sub {
 .spatial-json__pre--blur {
   max-height: 14rem;
   overflow: hidden;
-  filter: blur(3.5px);
-  opacity: 0.88;
+  filter: blur(1.6px);
+  opacity: 0.92;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
