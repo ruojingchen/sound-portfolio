@@ -1,0 +1,131 @@
+{
+  "min_sdk_version": "0.7.7",
+  "max_sdk_version": "0.7.8",
+  "conversation_azimuth": [
+    -10,
+    10,
+    -15,
+    15,
+    -20,
+    20
+  ],
+  "config": [
+    {
+      "source_type": [
+        ".mp3",
+        "成品"
+      ],
+      "azimuth": [
+        0
+      ],
+      "elevation": 0,
+      "angle": 90,
+      "gain": -100
+    },
+    {
+      "source_type": [
+        "报幕",
+        "报幕背景"
+      ],
+      "azimuth": [
+        0
+      ],
+      "elevation": 0,
+      "angle": 90,
+      "gain": -1
+    },
+    {
+      "source_type": [
+        "旁白"
+      ],
+      "type": "object",
+      "azimuth": [
+        0
+      ],
+      "elevation": 0,
+      "angle": 90,
+      "distance": 0.8,
+      "size": 40,
+      "diversity": 0,
+      "fake_stereo_to_mono": true
+    },
+    {
+      "source_type": [
+        "OS",
+        "os"
+      ],
+      "type": "object",
+      "azimuth": [
+        0
+      ],
+      "conversation": true,
+      "elevation": 5,
+      "angle": 100,
+      "distance": 0.9,
+      "size": 3,
+      "gain": 0
+    },
+    {
+      "source_type": [
+        "default"
+      ],
+      "type": "object",
+      "azimuth": [
+        0
+      ],
+      "elevation": 0,
+      "angle": 45,
+      "gain": 0,
+      "diversity": 0,
+      "fake_stereo_to_mono": true,
+      "conversation": true,
+      "follow": "Master"
+    },
+    {
+      "source_type": [
+        "音效"
+      ],
+      "type": "object",
+      "azimuth": [
+        0
+      ],
+      "elevation": 10,
+      "angle": 50,
+      "diversity": 0.01,
+      "distance": 0.675,
+      "lfe_send_enable": false,
+      "lfe_send_gain": 0,
+      "center_level": 0,
+      "follow": "Follower"
+    },
+    {
+      "source_type": [
+        "bgm",
+        "BGM"
+      ],
+      "azimuth": [
+        0
+      ],
+      "elevation": 10,
+      "angle": 120,
+      "diversity": 0.25,
+      "lfe_send_enable": true,
+      "lfe_send_gain": -37,
+      "gain": -20
+    },
+    {
+      "source_type": [
+        "背景"
+      ],
+      "azimuth": [
+        0
+      ],
+      "elevation": 15,
+      "angle": 160,
+      "diversity": 1,
+      "lfe_send_enable": true,
+      "lfe_send_gain": -37,
+      "gain": 0
+    }
+  ]
+}
